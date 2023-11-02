@@ -9,7 +9,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      body: ["Libre Baskerville"],
+      title: ["Libre DM Serif Display"],
+      body: ["Playfair Display", "serif"],
     },
   },
   plugins: [],
