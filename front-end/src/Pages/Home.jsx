@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import Services from "../Components/Services.jsx";
+import Dining from "../Components/Dining.jsx";
 import image1 from "../images/AdobeStock_323023398.jpeg";
 import image2 from "../images/AdobeStock_575552556.jpeg";
 import image3 from "../images/AdobeStock_629069571.jpeg";
@@ -99,12 +100,21 @@ function App() {
           </div>
         </div>
       </div>
+      <div className="flex justify-center items-center text-center text-2xl font-title italic my-40 mx-96	">
+        Welcome to the legendary 31th Hotel. Surrounded by the pristine beauty
+        of Big Bend country, the 31th offers unique accommodations with
+        laid-back luxury, gracious hospitality, superior dining, and one of the
+        most iconic bars in New York City. Since 1988, our hotel has created
+        memories for generations of travelers, create one for yourself with an
+        unforgettable stay at the 31th Hotel!
+      </div>
       <Services
         bigImage={room1}
         smallImage={room2}
         title="Room and Suite"
         text="Hotel rooms offer a range of views, from vibrant cityscapes with twinkling lights, to serene natural landscapes like gardens or oceans. Some overlook historic landmarks, providing a glimpse into the past, ensuring a personalized stay for every guest."
       />
+      <Dining />
       <Link to="/GotoGalleryGotoGalleryGotoGalleryGotoGalleryGotoGalleryGotoGallery">
         <button className="w-full py-4 bg-red-500 text-white text-2xl font-bold uppercase mt-4">
           Special Offer!!!!!!!!!!
