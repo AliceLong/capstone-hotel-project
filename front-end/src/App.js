@@ -5,6 +5,8 @@ import "./App.css";
 import Home from "./Pages/Home";
 import Error from "./Pages/Error";
 import ReadMore from "./Components/ReadMore";
+import MirrorError from "./Pages/MirrorError";
+import SpecialOffer from "./Pages/SpecialOffer";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           path="/GotoGalleryGotoGalleryGotoGalleryGotoGalleryGotoGalleryGotoGallery"
           element={<ReadMore />}
         />
+        <Route path="/SpecialOfferCode:<Code>" element={<MirrorError />} />
+        <Route path="SpecialOfferCode:<dfawh>" element={<SpecialOffer />} />
       </Routes>
     </Router>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Services = ({ bigImage, smallImage, title, text }) => {
+const Accommodations = ({ bigImage, smallImage, title, text }) => {
   return (
     <div className="p-20">
       <div className="flex">
@@ -31,4 +31,4 @@ const Services = ({ bigImage, smallImage, title, text }) => {
   );
 };
 
-export default Services;
+export default Accommodations;
