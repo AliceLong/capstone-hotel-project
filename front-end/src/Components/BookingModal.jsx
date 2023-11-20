@@ -128,7 +128,7 @@ const BookingModal = ({ bookModalIsOpen, closeBookModal }) => {
               placeholder="Offer Code"
               value={userCode}
               onChange={(e) => setUserCode(e.target.value)}
-              className="w-full block text-left text-xl uppercase font-regular mt-8 font-body border-b-2 text-black"
+              className="w-full block text-left text-xl  font-regular mt-8 font-body border-b-2 text-black"
             />
           </div>
           <button

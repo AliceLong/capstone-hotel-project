@@ -18,13 +18,7 @@ const images = [image1, room3, image3];
 function App() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [bookModalIsOpen, setBookModalIsOpen] = useState(false);
-  const [dateRange, setDateRange] = useState([null, null]);
-  const [startDate, endDate] = dateRange;
-  const [errorMessage, setErrorMessage] = useState("");
-  const [promotionCode, setPromotionCode] = useState("");
-  const [userCode, setUserCode] = useState("");
-  const [guests, setGuests] = useState(1);
-  const [availableDates, setAvailableDates] = useState([]);
+  const [readMoreModalIsOpen, setReadMoreModalIsOpen] = useState(false);
 
   const openBookModal = () => {
     setBookModalIsOpen(true);
@@ -55,22 +49,6 @@ function App() {
   const [refEntertainment, inViewEntertainment] = useInView({
     triggerOnce: true,
   });
-
-  const handleSubmit = () => {
-    if (userCode !== promotionCode) {
-      setErrorMessage("Invalid offer code.");
-      return;
-    }
-
-    if (guests !== 1) {
-      setErrorMessage("Only one guest is allowed.");
-      return;
-    }
-
-    // If all checks pass, clear the error message and proceed with the booking.
-    setErrorMessage("");
-    console.log("Booking successful.");
-  };
 
   return (
     <>
@@ -190,24 +168,9 @@ function App() {
           <Entertainment />
         </div>
       </div>
-
-      {/* Book Now Modal */}
-      {/* Book Now Modal */}
       <BookingModal
         bookModalIsOpen={bookModalIsOpen}
         closeBookModal={closeBookModal}
-        handleSubmit={handleSubmit}
-        startDate={startDate}
-        endDate={endDate}
-        dateRange={dateRange}
-        setDateRange={setDateRange}
-        availableDates={availableDates}
-        guests={guests}
-        setGuests={setGuests}
-        userCode={userCode}
-        setUserCode={setUserCode}
-        errorMessage={errorMessage}
-        setErrorMessage={setErrorMessage}
       />
     </>
   );
