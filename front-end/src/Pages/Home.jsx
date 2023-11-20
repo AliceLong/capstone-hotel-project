@@ -10,11 +10,29 @@ import room1 from "../images/room1.png";
 import room2 from "../images/room2.jpg";
 import room3 from "../images/room3.jpg";
 import Entertainment from "../Components/Entertainment.jsx";
+import BookingModal from "../Components/BookingModal";
+import "react-datepicker/dist/react-datepicker.css";
 
 const images = [image1, room3, image3];
 
 function App() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [bookModalIsOpen, setBookModalIsOpen] = useState(false);
+  const [dateRange, setDateRange] = useState([null, null]);
+  const [startDate, endDate] = dateRange;
+  const [errorMessage, setErrorMessage] = useState("");
+  const [promotionCode, setPromotionCode] = useState("");
+  const [userCode, setUserCode] = useState("");
+  const [guests, setGuests] = useState(1);
+  const [availableDates, setAvailableDates] = useState([]);
+
+  const openBookModal = () => {
+    setBookModalIsOpen(true);
+  };
+
+  const closeBookModal = () => {
+    setBookModalIsOpen(false);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,6 +55,22 @@ function App() {
   const [refEntertainment, inViewEntertainment] = useInView({
     triggerOnce: true,
   });
+
+  const handleSubmit = () => {
+    if (userCode !== promotionCode) {
+      setErrorMessage("Invalid offer code.");
+      return;
+    }
+
+    if (guests !== 1) {
+      setErrorMessage("Only one guest is allowed.");
+      return;
+    }
+
+    // If all checks pass, clear the error message and proceed with the booking.
+    setErrorMessage("");
+    console.log("Booking successful.");
+  };
 
   return (
     <>
@@ -76,12 +110,12 @@ function App() {
                   </Link>
                 </div>
                 <div className="hidden md:block">
-                  <Link
-                    to="/error"
-                    className="ml-4 inline-block py-2 px-6 text-sm font-body text-white capitalize bg-black group-hover:border-black group-hover:border group-hover:bg-white group-hover:text-black"
+                  <button
+                    onClick={openBookModal}
+                    className=" ml-0 inline-block py-2 px-6 text-sm font-body text-white capitalize bg-black hover:border-black hover:border hover:bg-white hover:text-black"
                   >
                     Book Now
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>
@@ -120,12 +154,14 @@ function App() {
           }`}
         >
           <div className="flex justify-center items-center text-center text-2xl font-title italic my-40 mx-96">
-            Welcome to the legendary 31th Hotel. Surrounded by the pristine
-            beauty of Big Bend country, the 31th offers unique accommodations
+            We are thrilled to announce the much-anticipated reopening of the
+            31th Hotel in this October, 29th! After an extensive renovation, we
+            invite you to rediscover the epitome of luxury and hospitality in
+            the heart of New York City. The 31th offers unique accommodations
             with laid-back luxury, gracious hospitality, superior dining, and
-            one of the most iconic bars in New York City. Since 1988, our hotel
-            has created memories for generations of travelers, create one for
-            yourself with an unforgettable stay at ꓕμԍ 3Ɩϝμ μoϝԍɼ
+            one of the most iconic bars. Since 1984, our hotel has created
+            memories for generations of travelers. Create one for yourself with
+            an unforgettable stay at ꓕμԍ 3Ɩϝμ μoϝԍɼ.
           </div>
 
           <Accomendation
@@ -154,7 +190,25 @@ function App() {
           <Entertainment />
         </div>
       </div>
-      );
+
+      {/* Book Now Modal */}
+      {/* Book Now Modal */}
+      <BookingModal
+        bookModalIsOpen={bookModalIsOpen}
+        closeBookModal={closeBookModal}
+        handleSubmit={handleSubmit}
+        startDate={startDate}
+        endDate={endDate}
+        dateRange={dateRange}
+        setDateRange={setDateRange}
+        availableDates={availableDates}
+        guests={guests}
+        setGuests={setGuests}
+        userCode={userCode}
+        setUserCode={setUserCode}
+        errorMessage={errorMessage}
+        setErrorMessage={setErrorMessage}
+      />
     </>
   );
 }

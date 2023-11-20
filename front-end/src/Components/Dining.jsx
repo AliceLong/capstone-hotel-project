@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const Dining = () => {
   const [selectedOption, setSelectedOption] = useState("coffee");
+  const [text, setText] = useState("");
 
   const images = {
     coffee: image1,
@@ -14,41 +15,44 @@ const Dining = () => {
   };
 
   return (
-    <div className="p-20 mx-20">
+    <div className="p-20 mx-20 relative">
       <div className="flex">
         <div className="w-1/3 flex flex-col mr-30 ml-10 relative">
-          <p className="text-left text-4xl uppercase font-semibold  font-body mt-4">
+          <p className="text-left text-4xl uppercase font-semibold font-body mt-4">
             Dining
           </p>
           <p className="text-left text-sm font-regular font-body mt-4">
             The 31th Hotel offers unforgettable food and drink options. Enjoy
             dinner at the award-winning 12-Gage Restaurant authentic New York
-            cuisine influenced by the surrounding border region. Grab drinks at
-            one of Texas Monthly’s “Top Hotel Bars,” the White Buffalo Bar.
-            Start your day with a cup of coffee from the V6 Coffee and then stop
-            by the Brick Vault Brewery Barbeque for some beer and BBQ.
+            cuisine influenced by the surrounding border region. Start your day
+            with a cup of coffee from the V6 Coffee and then stop by the Brick
+            Vault Brewery Barbeque for some beer and BBQ.
           </p>
-          <Link
-            to="/error"
-            className="text-left text-xl uppercase font-semibold  font-body mt-4 border-b-2  text-black  hover:text-gray-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
+
+          <button
+            className="text-left text-xl uppercase font-semibold font-body mt-4 border-b-2 text-black hover:text-gray-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
             onMouseEnter={() => setSelectedOption("coffee")}
+            onMouseDown={() => setText("Here")}
+            onMouseUp={() => setText("")}
           >
             Coffee
-          </Link>
-          <Link
-            to="/error"
-            className="text-left text-xl uppercase font-semibold  font-body mt-4 border-b-2  text-black hover:text-gray-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
+          </button>
+          <button
+            className="text-left text-xl uppercase font-semibold font-body mt-4 border-b-2 text-black hover:text-gray-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
             onMouseEnter={() => setSelectedOption("highDining")}
+            onMouseDown={() => setText("is")}
+            onMouseUp={() => setText("")}
           >
             High Dining
-          </Link>
-          <Link
-            to="/error"
-            className="text-left text-xl uppercase font-semibold font-body mt-4 border-b-2  text-black hover:text-gray-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
+          </button>
+          <button
+            className="text-left text-xl uppercase font-semibold font-body mt-4 border-b-2 text-black hover:text-gray-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
             onMouseEnter={() => setSelectedOption("buffet")}
+            onMouseDown={() => setText("not safe")}
+            onMouseUp={() => setText("")}
           >
             Buffet
-          </Link>
+          </button>
           <Link
             to="/SpecialOfferCode:<Code>"
             className="text-left text-xl uppercase font-semibold font-body mt-4 bg-transparent text-white hover:text-red-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
@@ -57,12 +61,17 @@ const Dining = () => {
             Special Offer
           </Link>
         </div>
-        <div className="w-1/2 h-1/2 mx-20">
+        <div className="w-1/2 h-1/2 mx-20 relative">
           <img
             src={images[selectedOption]}
             alt={selectedOption}
             className="object-cover h-96 w-auto"
           />
+          {text && (
+            <div className="absolute top-0 left-0 w-full h-full">
+              <p className="text-white text-xl">{text}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
