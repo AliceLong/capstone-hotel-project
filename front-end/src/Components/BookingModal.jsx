@@ -1,5 +1,7 @@
 import DatePicker from "react-datepicker";
+import { useNavigate } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
+import "./datepicker.css";
 import Modal from "react-modal";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -12,8 +14,14 @@ const BookingModal = ({ bookModalIsOpen, closeBookModal }) => {
   const [userCode, setUserCode] = useState("");
   const [guests, setGuests] = useState(1);
   const [availableDates, setAvailableDates] = useState([]);
+  const navigate = useNavigate();
 
   const handleSubmit = () => {
+    if (!startDate || !endDate) {
+      setErrorMessage("Check-in date is required.");
+      return;
+    }
+
     if (userCode !== promotionCode) {
       setErrorMessage("Invalid offer code.");
       return;
@@ -27,6 +35,9 @@ const BookingModal = ({ bookModalIsOpen, closeBookModal }) => {
     // If all checks pass, clear the error message and proceed with the booking.
     setErrorMessage("");
     console.log("Booking successful.");
+
+    // Navigate to "home2"
+    navigate("/ꓕμԍ 3Ɩϝμ μoϝԍɼ");
   };
 
   useEffect(() => {
@@ -42,7 +53,16 @@ const BookingModal = ({ bookModalIsOpen, closeBookModal }) => {
     fetchDates();
   }, []);
   return (
-    <Modal isOpen={bookModalIsOpen} onRequestClose={closeBookModal}>
+    <Modal
+      isOpen={bookModalIsOpen}
+      onRequestClose={closeBookModal}
+      style={{
+        content: {
+          margin: "200px 400px",
+          padding: "100px 150px", // 100px vertical padding, 50px horizontal padding
+        },
+      }}
+    >
       <div className="flex justify-between">
         <p className="text-left text-4xl uppercase font-semibold  font-body mt-4">
           Book and Stay
@@ -87,7 +107,7 @@ const BookingModal = ({ bookModalIsOpen, closeBookModal }) => {
           />
           {errorMessage && <p className="text-red-500">{errorMessage}</p>}
         </div>
-        <div className="w-1/4 pl-4">
+        <div className="w-1/4 pl-4 mx-40">
           <div className="mb-4">
             <label className="text-left text-m uppercase font-semibold  font-body mt-4  text-black">
               Check-in date:

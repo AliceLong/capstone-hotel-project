@@ -1,7 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
-const Accommodations = ({ bigImage, smallImage, title, text }) => {
+const Accommodations = ({ bigImage, smallImage }) => {
+  // State to track the text
+  const defaultText =
+    "Hotel rooms offer a range of views, from vibrant cityscapes with twinkling lights, to serene natural landscapes like gardens or oceans. Some overlook historic landmarks, providing a glimpse into the past, ensuring a personalized stay for every guest.";
+  const texts = [
+    "",
+    "We are here to help",
+    "The special offer",
+    "is under the buffet",
+    "Use the mirror",
+  ];
+  const [textIndex, setTextIndex] = useState(0);
+
+  // Function to handle the click event
+  const handleAccommodationsClick = () => {
+    // Update the text index when the button is clicked
+    setTextIndex((textIndex + 1) % texts.length);
+  };
   return (
     <div className="p-20">
       <div className="flex">
@@ -13,17 +29,17 @@ const Accommodations = ({ bigImage, smallImage, title, text }) => {
           <img src={smallImage} alt="Small" className="w-2/3 h-auto" />
           <div className="w-2/3 mt-10 items-center ">
             <p className="text-left text-4xl uppercase font-semibold  font-body mt-4">
-              {title}
+              {"Room and Suite"}
             </p>
             <p className="text-left text-sm font-regular font-body mt-4">
-              {text}
+              {defaultText} {texts[textIndex]}
             </p>
-            <Link
-              to="/error"
+            <button
               className="my-5 ml-0 inline-block py-2 px-6 text-sm font-body text-white capitalize bg-black hover:border-black hover:border hover:bg-white hover:text-black"
+              onClick={handleAccommodationsClick}
             >
               Accommodations
-            </Link>
+            </button>
           </div>
         </div>
       </div>

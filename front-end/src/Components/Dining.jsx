@@ -17,7 +17,7 @@ const Dining = () => {
   return (
     <div className="p-20 mx-20 relative">
       <div className="flex">
-        <div className="w-1/3 flex flex-col mr-30 ml-10 relative">
+        <div className="w-1/2 flex flex-col mr-20 ml-20 relative">
           <p className="text-left text-4xl uppercase font-semibold font-body mt-4">
             Dining
           </p>
@@ -56,7 +56,7 @@ const Dining = () => {
           <Link
             to="/SpecialOfferCode:<Code>"
             className="text-left text-xl uppercase font-semibold font-body mt-4 bg-transparent text-white hover:text-red-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
-            onMouseEnter={() => setSelectedOption("buffet")}
+            onMouseEnter={() => setText("don't click this button")}
           >
             Special Offer
           </Link>

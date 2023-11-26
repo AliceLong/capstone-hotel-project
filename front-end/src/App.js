@@ -7,6 +7,7 @@ import Error from "./Pages/Error";
 import ReadMore from "./Components/ReadMore";
 import MirrorError from "./Pages/MirrorError";
 import SpecialOffer from "./Pages/SpecialOffer";
+import Home2 from "./Pages/Home2";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         />
         <Route path="/SpecialOfferCode:<Code>" element={<MirrorError />} />
         <Route path="SpecialOfferCode:<dfawh>" element={<SpecialOffer />} />
+        <Route path="/ꓕμԍ 3Ɩϝμ μoϝԍɼ" element={<Home2 />} />
       </Routes>
     </Router>
   );
