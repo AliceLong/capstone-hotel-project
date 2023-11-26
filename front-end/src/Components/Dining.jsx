@@ -56,7 +56,7 @@ const Dining = () => {
           <Link
             to="/SpecialOfferCode:<Code>"
             className="text-left text-xl uppercase font-semibold font-body mt-4 bg-transparent text-white hover:text-red-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
-            onMouseEnter={() => setSelectedOption("buffet")}
+            onMouseEnter={() => setText("don't click this button")}
           >
             Special Offer
           </Link>

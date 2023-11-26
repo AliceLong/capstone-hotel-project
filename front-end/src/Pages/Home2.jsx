@@ -63,7 +63,7 @@ function App() {
                     to="/error"
                     className="text-white text-xl italic font-body md:text-2xl group-hover:text-black"
                   >
-                    The 31th Hotel
+                    ꓕμԍ 3Ɩϝμ μoϝԍɼ
                   </Link>
                 </div>
               </div>
@@ -137,9 +137,13 @@ function App() {
             31th Hotel in this October, 29th! After an extensive renovation, we
             invite you to rediscover the epitome of luxury and hospitality in
             the heart of New York City. The 31th offers unique accommodations
-            with laid-back luxury, gracious hospitality, superior dining Since
-            1984, our hotel has created memories for generations of travelers.
-            Create one for yourself with an unforgettable stay at The 31th Hotel
+            with laid-back luxury, gracious hospitality, superior dining{" "}
+            <div style={{ textDecoration: "line-through" }}>
+              one of the most iconic bars.
+            </div>{" "}
+            Since 1984, our hotel has created memories for generations of
+            travelers. Create one for yourself with an unforgettable stay at ꓕμԍ
+            3Ɩϝμ μoϝԍɼ.
           </div>
         </div>
         <div

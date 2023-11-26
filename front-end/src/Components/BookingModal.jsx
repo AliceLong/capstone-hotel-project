@@ -1,5 +1,6 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import "../datepicker.css";
 import Modal from "react-modal";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
