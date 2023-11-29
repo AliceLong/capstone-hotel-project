@@ -4,10 +4,10 @@ import "./App.css";
 // imports pages
 import Home from "./Pages/Home";
 import Error from "./Pages/Error";
-import ReadMore from "./Components/ReadMore";
 import MirrorError from "./Pages/MirrorError";
 import SpecialOffer from "./Pages/SpecialOffer";
 import Home2 from "./Pages/Home2";
+import TermCondition from "./Pages/TermCondition";
 
 function App() {
   return (
@@ -15,13 +15,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Error" element={<Error />} />
-        <Route
-          path="/GotoGalleryGotoGalleryGotoGalleryGotoGalleryGotoGalleryGotoGallery"
-          element={<ReadMore />}
-        />
         <Route path="/SpecialOfferCode:<Code>" element={<MirrorError />} />
         <Route path="SpecialOfferCode:<dfawh>" element={<SpecialOffer />} />
         <Route path="/ꓕμԍ 3Ɩϝμ μoϝԍɼ" element={<Home2 />} />
+        <Route path="/TermCondition" element={<TermCondition />} />
       </Routes>
     </Router>
   );
