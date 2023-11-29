@@ -113,7 +113,7 @@ function App() {
             <div className="absolute w-full h-full bg-black opacity-40" />
           </div>
         ))}
-        <div className="text-center absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div className="text-white text-1xl font-regular italic md:text-12xl font-body mb-1">
             Where Every
           </div>
@@ -132,14 +132,15 @@ function App() {
             inViewTitle ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="flex justify-center items-center text-center text-2xl font-title italic my-40 mx-96">
+          <div className="flex justify-center items-center text-center text-2xl font-title italic my-[10%] mx-[30%]">
             We are thrilled to announce the much-anticipated reopening of the
-            31th Hotel in this October, 29th! After an extensive renovation, we
-            invite you to rediscover the epitome of luxury and hospitality in
-            the heart of New York City. The 31th offers unique accommodations
-            with laid-back luxury, gracious hospitality, superior dining Since
-            1984, our hotel has created memories for generations of travelers.
-            Create one for yourself with an unforgettable stay at The 31th Hotel
+            31th Hotel in this October, 29th and offer limited speical offer for
+            our loyal customers! After an extensive renovation, we invite you to
+            rediscover the epitome of luxury and hospitality in the heart of New
+            York City. The 31th offers unique accommodations with luxury,
+            gracious hospitality, superior dining. Since 1984, our hotel has
+            created memories for generations of travelers. Create one for
+            yourself with an unforgettable stay at the 31th hotel
           </div>
         </div>
         <div

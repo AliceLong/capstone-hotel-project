@@ -11,11 +11,11 @@ const Entertainment = () => {
   const descriptions = ["SPA", "SWIMMING", "GARDEN"];
 
   return (
-    <div className="p-20 mx-20">
+    <div className="p-20 mx-[10%] relative">
       <h2 className="text-left text-4xl uppercase font-semibold font-body mb-10">
         Entertainment
       </h2>
-      <div className="flex overflow-x-auto mr-10">
+      <div className="flex overflow-x-auto">
         <div className="flex space-x-2">
           {images.map((image, index) => (
             <div key={index} className="relative">

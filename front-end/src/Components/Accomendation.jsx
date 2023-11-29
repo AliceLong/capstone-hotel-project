@@ -8,7 +8,7 @@ const Accommodations = ({ bigImage, smallImage }) => {
     "",
     "We are here to help",
     "The special offer",
-    "is under the buffet",
+    "is under the 31th Bistro",
     "Use the mirror",
   ];
   const [textIndex, setTextIndex] = useState(0);
@@ -21,18 +21,21 @@ const Accommodations = ({ bigImage, smallImage }) => {
   return (
     <div className="p-20">
       <div className="flex">
-        <div className="w-1/2 mx-10">
+        <div className="w-1/2 mx-[10%]">
           <img src={bigImage} alt="Big" className="w-full h-auto" />
         </div>
 
-        <div className="w-1/2 flex flex-col ml-40 relative">
+        <div className="w-1/2 flex flex-col ml-[5%] relative">
           <img src={smallImage} alt="Small" className="w-2/3 h-auto" />
           <div className="w-2/3 mt-10 items-center ">
             <p className="text-left text-4xl uppercase font-semibold  font-body mt-4">
               {"Room and Suite"}
             </p>
             <p className="text-left text-sm font-regular font-body mt-4">
-              {defaultText} {texts[textIndex]}
+              {defaultText}
+            </p>
+            <p className="text-left text-sm font-regular font-body mt-4 bg-red-500 text-white">
+              {texts[textIndex]}
             </p>
             <button
               className="my-5 ml-0 inline-block py-2 px-6 text-sm font-body text-white capitalize bg-black hover:border-black hover:border hover:bg-white hover:text-black"

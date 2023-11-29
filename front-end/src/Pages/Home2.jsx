@@ -4,28 +4,79 @@ import { useInView } from "react-intersection-observer";
 import Accomendation from "../Components/Accomendation.jsx";
 import Dining from "../Components/Dining.jsx";
 import image1 from "../images/AdobeStock_323023398.jpeg";
-import image2 from "../images/AdobeStock_575552556.jpeg";
 import image3 from "../images/AdobeStock_629069571.jpeg";
 import room1 from "../images/room1.png";
 import room2 from "../images/room2.jpg";
 import room3 from "../images/room3.jpg";
 import Entertainment from "../Components/Entertainment.jsx";
-import BookingModal from "../Components/BookingModal";
 import "react-datepicker/dist/react-datepicker.css";
+import Modal from "react-modal";
 
 const images = [image1, room3, image3];
 
+function TermModal({ isOpen, onRequestClose }) {
+  const [hasAgreed, setHasAgreed] = useState(false);
+
+  return (
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onRequestClose}
+      style={{
+        content: {
+          margin: "200px 400px",
+          padding: "100px 150px", // 100px vertical padding, 50px horizontal padding
+        },
+      }}
+    >
+      <h2>Terms and Conditions</h2>
+      <ul>
+        <li>Term 1: Description of term 1</li>
+        <li>Term 2: Description of term 2</li>
+        <li>Term 3: Description of term 3</li>
+        {/* Add more terms and conditions as needed */}
+      </ul>
+      <div>
+        <input
+          type="checkbox"
+          id="agree"
+          name="agree"
+          value="agree"
+          onChange={() => setHasAgreed(!hasAgreed)}
+        />
+        <label htmlFor="agree">
+          I have read and agree to the terms and conditions
+        </label>
+      </div>
+      <button disabled={!hasAgreed} onClick={onRequestClose}>
+        I Agree
+      </button>
+    </Modal>
+  );
+}
+function ReminderModal({ isOpen, onRequestClose }) {
+  return (
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onRequestClose}
+      style={{
+        content: {
+          margin: "200px 400px",
+          padding: "100px 150px",
+        },
+      }}
+    >
+      <h2>Important Reminder</h2>
+      {/* Add your important reminder here */}
+      <button onClick={onRequestClose}>Close</button>
+    </Modal>
+  );
+}
+
 function App() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [bookModalIsOpen, setBookModalIsOpen] = useState(false);
+  const [termModalIsOpen, setTermModalIsOpen] = useState(true);
+  const [reminderModalIsOpen, setReminderModalIsOpen] = useState(false);
 
-  const openBookModal = () => {
-    setBookModalIsOpen(true);
-  };
-
-  const closeBookModal = () => {
-    setBookModalIsOpen(false);
-  };
   const [refDining, inViewDining] = useInView({
     triggerOnce: false,
   });
@@ -89,10 +140,7 @@ function App() {
                   </Link>
                 </div>
                 <div className="hidden md:block">
-                  <button
-                    onClick={openBookModal}
-                    className=" ml-0 inline-block py-2 px-6 text-sm font-body text-white capitalize bg-black hover:border-black hover:border hover:bg-white hover:text-black"
-                  >
+                  <button className=" ml-0 inline-block py-2 px-6 text-sm font-body text-white capitalize bg-black hover:border-black hover:border hover:bg-white hover:text-black">
                     Book Now
                   </button>
                 </div>
@@ -183,9 +231,16 @@ function App() {
           <Entertainment />
         </div>
       </div>
-      <BookingModal
-        bookModalIsOpen={bookModalIsOpen}
-        closeBookModal={closeBookModal}
+      <TermModal
+        isOpen={termModalIsOpen}
+        onRequestClose={() => {
+          setTermModalIsOpen(false);
+          setReminderModalIsOpen(true);
+        }}
+      />
+      <ReminderModal
+        isOpen={reminderModalIsOpen}
+        onRequestClose={() => setReminderModalIsOpen(false)}
       />
     </>
   );

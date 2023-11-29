@@ -36,8 +36,7 @@ const BookingModal = ({ bookModalIsOpen, closeBookModal }) => {
     setErrorMessage("");
     console.log("Booking successful.");
 
-    // Navigate to "home2"
-    navigate("/ꓕμԍ 3Ɩϝμ μoϝԍɼ");
+    navigate("/TermCondition");
   };
 
   useEffect(() => {
@@ -58,8 +57,8 @@ const BookingModal = ({ bookModalIsOpen, closeBookModal }) => {
       onRequestClose={closeBookModal}
       style={{
         content: {
-          margin: "200px 400px",
-          padding: "100px 150px", // 100px vertical padding, 50px horizontal padding
+          margin: "10vh 5vw", // 10% of the viewport height top and bottom, 20% of the viewport width on the left and right
+          padding: "5vh 10vw", // 5% vertical padding, 10% horizontal padding
         },
       }}
     >
@@ -94,7 +93,9 @@ const BookingModal = ({ bookModalIsOpen, closeBookModal }) => {
                 setDateRange(dates);
                 setErrorMessage("");
               } else if (start) {
-                setErrorMessage("This start date is not available.");
+                setErrorMessage(
+                  "This check-in date is not available. Please find the avaiable check-in date"
+                );
               }
             }}
             startDate={startDate}
