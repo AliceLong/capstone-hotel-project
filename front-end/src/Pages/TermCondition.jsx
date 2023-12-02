@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import { useRef, useEffect, useState, createRef } from "react";
 import { useNavigate } from "react-router-dom";
 import image1 from "../images/AdobeStock_323023398.jpeg";
+import Footer from "../Components/Footer";
+import { useInView } from "react-intersection-observer";
 
 const policiesData = [
   {
@@ -45,27 +47,51 @@ const TermCondition = () => {
 
   const handleAgreeChange = () => {
     setIsAgreed(!isAgreed);
-    if (!isAgreed) {
-      setLabelText(
-        "If you haven't consumed any food provided by the hotel, leave immediately. If you have done so, you have become the GUEST.You need to stay in the hotel for at least three days."
-      );
-    } else {
-      setLabelText("I agree with the policies terms");
-    }
+    setLabelText("I agree with the policies terms");
   };
 
   const handleNextClick = () => {
     navigate("/ꓕμԍ 3Ɩϝμ μoϝԍɼ");
   };
+  const refs = useRef([]);
+  refs.current = policiesData.map((_, i) => refs.current[i] ?? createRef());
+
+  useEffect(() => {
+    refs.current.forEach((ref, index) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            ref.current.style.transition = "opacity 1000ms, transform 1000ms";
+            ref.current.style.opacity = 1;
+            ref.current.style.transform = "translateY(0)";
+          } else {
+            ref.current.style.opacity = 0;
+            ref.current.style.transform = "translateY(20px)";
+          }
+        },
+        {
+          threshold: 0.1,
+        }
+      );
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+      return () => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      };
+    });
+  }, []);
 
   return (
     <div>
       <div className="relative w-full">
         {/* Replace the following images with your actual image paths */}
-        <img src={image1} alt="" className="w-full h-128 object-cover" />
-        <div className="absolute top-0 left-0 w-full h-128 bg-black opacity-40" />
+        <img src={image1} alt="" className="w-full h-256 object-cover" />
+        <div className="absolute top-0 left-0 w-full h-256 bg-black opacity-40" />
       </div>
-      <div className="text-center absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <div className="text-white text-6xl font-regular italic md:text-12xl font-body mb-1">
           Policies
         </div>
@@ -87,7 +113,8 @@ const TermCondition = () => {
 
           <div className="grid grid-cols-2 gap-2 gap-x-20 ">
             {policiesData.map((policy, index) => (
-              <div key={index} className="mb-6 group">
+              <div key={index} className="mb-6 group" ref={refs.current[index]}>
+                {<hr className="border-t border-gray-300 mb-4" />}
                 <h2 className="text-sm upper font-semibold text-gray-800 mb-2 font-body">
                   {policy.title}
                 </h2>
@@ -107,9 +134,6 @@ const TermCondition = () => {
                       {policy.additionalContent}
                     </span>
                   </div>
-                )}
-                {index < policiesData.length && (
-                  <hr className="border-t border-gray-300 mb-4" />
                 )}
               </div>
             ))}
@@ -144,14 +168,16 @@ const TermCondition = () => {
           </label>
         </div>
         <button
-          className={`py-2 px-20 text-sm font-body text-white capitalize bg-black 
+          className={`py-2 px-20 text-sm font-body text-white capitalize bg-black mb-[10%]
   ${isAgreed ? "" : "bg-gray-400 cursor-not-allowed"}`}
           onClick={handleNextClick}
           disabled={!isAgreed}
         >
+          {" "}
           Confirm Booking
         </button>
       </div>
+      <Footer />
     </div>
   );
 };

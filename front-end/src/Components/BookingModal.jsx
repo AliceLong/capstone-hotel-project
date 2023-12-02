@@ -58,7 +58,7 @@ const BookingModal = ({ bookModalIsOpen, closeBookModal }) => {
       style={{
         content: {
           margin: "10vh 5vw", // 10% of the viewport height top and bottom, 20% of the viewport width on the left and right
-          padding: "5vh 10vw", // 5% vertical padding, 10% horizontal padding
+          padding: "2vh 5vw", // 5% vertical padding, 10% horizontal padding
         },
       }}
     >

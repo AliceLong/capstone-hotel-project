@@ -12,6 +12,7 @@ import room3 from "../images/room3.jpg";
 import Entertainment from "../Components/Entertainment.jsx";
 import BookingModal from "../Components/BookingModal";
 import "react-datepicker/dist/react-datepicker.css";
+import Footer from "../Components/Footer.jsx";
 
 const images = [image1, room3, image3];
 
@@ -137,10 +138,7 @@ function App() {
             31th Hotel in this October, 29th and offer limited speical offer for
             our loyal customers! After an extensive renovation, we invite you to
             rediscover the epitome of luxury and hospitality in the heart of New
-            York City. The 31th offers unique accommodations with luxury,
-            gracious hospitality, superior dining. Since 1984, our hotel has
-            created memories for generations of travelers. Create one for
-            yourself with an unforgettable stay at the 31th hotel
+            York City. Limited premium offer is now open to the publc.
           </div>
         </div>
         <div
@@ -184,6 +182,7 @@ function App() {
         bookModalIsOpen={bookModalIsOpen}
         closeBookModal={closeBookModal}
       />
+      <Footer />
     </>
   );
 }
