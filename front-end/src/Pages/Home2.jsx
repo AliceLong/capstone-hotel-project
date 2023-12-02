@@ -180,7 +180,7 @@ function App() {
             inViewTitle ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="flex justify-center items-center text-center text-2xl font-title italic my-40 mx-96">
+          <div className="flex justify-center items-center text-center text-2xl font-title italic my-[10%] mx-[30%]">
             We are thrilled to announce the much-anticipated reopening of the
             31th Hotel in this October, 29th! After an extensive renovation, we
             invite you to rediscover the epitome of luxury and hospitality in

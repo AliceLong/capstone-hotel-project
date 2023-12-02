@@ -1,4 +1,8 @@
-.react-datepicker__header {
+.react-datepicker {
+  font-family: title;
+  font-size: 12px;
+  border: 1px solid #aeaeae;
+  border-radius: 0px;
 }
 
 .react-datepicker__day {
