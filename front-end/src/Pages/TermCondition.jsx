@@ -51,7 +51,7 @@ const TermCondition = () => {
   };
 
   const handleNextClick = () => {
-    navigate("/ꓕμԍ 3Ɩϝμ μoϝԍɼ");
+    navigate("/Welcome");
   };
   const refs = useRef([]);
   refs.current = policiesData.map((_, i) => refs.current[i] ?? createRef());
