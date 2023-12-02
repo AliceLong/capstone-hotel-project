@@ -51,7 +51,7 @@ const TermCondition = () => {
   };
 
   const handleNextClick = () => {
-    navigate("/ꓕμԍ 3Ɩϝμ μoϝԍɼ");
+    navigate("/Welcome");
   };
   const refs = useRef([]);
   refs.current = policiesData.map((_, i) => refs.current[i] ?? createRef());
@@ -150,14 +150,7 @@ const TermCondition = () => {
             By completing this booking, I acknowlege the rules and regulations
             during my stay in 31th Hotel
           </h1>
-          <label
-            onClick={handleAgreeChange}
-            className={`block mb-4 text-sm  ${
-              labelText === "I agree with the policies terms"
-                ? "text-gray-800 font-body font-semibold"
-                : "text-red-500"
-            } `}
-          >
+          <label onClick={handleAgreeChange}>
             <input
               type="checkbox"
               checked={isAgreed}
