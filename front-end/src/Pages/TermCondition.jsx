@@ -1,5 +1,7 @@
 import { useRef, useEffect, useState, createRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 import image1 from "../images/AdobeStock_323023398.jpeg";
 import Footer from "../Components/Footer";
 import { useInView } from "react-intersection-observer";
@@ -41,6 +43,7 @@ const policiesData = [
 ];
 
 const TermCondition = () => {
+  const { flag } = useParams();
   const [isAgreed, setIsAgreed] = useState(false);
   const [labelText, setLabelText] = useState("I agree with the policies terms");
   const navigate = useNavigate();
@@ -49,9 +52,12 @@ const TermCondition = () => {
     setIsAgreed(!isAgreed);
     setLabelText("I agree with the policies terms");
   };
-
   const handleNextClick = () => {
-    navigate("/Welcome");
+    if (flag === "revisited") {
+      navigate("/ꓕμԍ 3Ɩϝμ μoϝԍɼ");
+    } else {
+      navigate("/welcome");
+    }
   };
   const refs = useRef([]);
   refs.current = policiesData.map((_, i) => refs.current[i] ?? createRef());

@@ -1,0 +1,203 @@
+.glitch-container {
+  animation: glitch 1s step-start infinite, hue-rotate 5s infinite;
+  animation-delay: 5s; /* Add this line */
+
+  position: relative;
+  overflow: hidden;
+}
+
+.glitch-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/noise.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 75% 25%;
+  animation: noise 2s linear infinite, distortion 1s linear infinite,
+    background-fade 0.3s ease-in infinite;
+  animation-delay: 10s;
+
+  opacity: 0;
+}
+
+@keyframes distortion {
+  2%,
+  20% {
+    transform: translate(2px, 10px) skew(0deg);
+  }
+  13%,
+  30% {
+    transform: translate(-10px, 0) skew(-3deg);
+  }
+  37%,
+  55% {
+    transform: translate(0, 0) skew(5deg);
+  }
+  60%,
+  75% {
+    transform: translate(2px, 20px) skew(-2deg);
+  }
+  80%,
+  92% {
+    transform: translate(-10px, 0) skew(4deg);
+  }
+  96%,
+  100% {
+    transform: translate(0, -20px) skew(0deg);
+  }
+}
+@keyframes background-fade {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes noise {
+  0%,
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 75%);
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transform: translateX(-2px) translateY(-2px);
+  }
+  50% {
+    clip-path: polygon(0% 25%, 100% 25%, 100% 75%, 0% 75%);
+    transform: translateX(2px) translateY(2px);
+  }
+  75% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transform: translateX(-1px) translateY(-1px);
+  }
+}
+
+@keyframes glitch {
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+  4%,
+  60% {
+    transform: translate(-10px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+
+@keyframes hue-rotate {
+  0% {
+    filter: hue-rotate(0deg) saturate(100%);
+  }
+  100% {
+    filter: hue-rotate(360deg) saturate(0%);
+  }
+}
+
+.glitch-text::before {
+  content: attr(text1);
+  animation: delete 10s linear forwards;
+}
+
+.glitch-text::after {
+  content: attr(text2);
+  background: black;
+  color: #203e86;
+  font-family: "Roboto Mono", monospace;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.05rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  animation: cray 6s infinite steps(50), appear 10s linear;
+}
+/* The type and erase effect */
+@keyframes delete {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  95% {
+    visibility: hidden;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+@keyframes appear {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  95% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@keyframes cray {
+  0% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  2% {
+    font-weight: 200;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+  4% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+  6% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: none;
+  }
+  8% {
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  10% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+  12% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  /* Continue adding keyframes as needed up to 100% */
+}
+
+.reminder {
+  background-color: white;
+  padding: 5vh 5vw;
+}
