@@ -8,6 +8,8 @@ import MirrorError from "./Pages/MirrorError";
 import SpecialOffer from "./Pages/SpecialOffer";
 import Home2 from "./Pages/Home2";
 import TermCondition from "./Pages/TermCondition";
+import Welcome from "./Pages/Welcome";
+import AccomendationPage from "./Pages/AccomendationPage";
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
         <Route path="/SpecialOfferCode:<Code>" element={<MirrorError />} />
         <Route path="SpecialOfferCode:<dfawh>" element={<SpecialOffer />} />
         <Route path="/ꓕμԍ 3Ɩϝμ μoϝԍɼ" element={<Home2 />} />
-        <Route path="/TermCondition" element={<TermCondition />} />
+        <Route path="/TermCondition/:flag?" element={<TermCondition />} />
+        <Route path="/Loading" element={<Welcome />} />
+        <Route path="/AccomendationPage/:id?" element={<AccomendationPage />} />
       </Routes>
     </Router>
   );
