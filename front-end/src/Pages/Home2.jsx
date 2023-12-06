@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import Accomendation from "../Components/Accomendation.jsx";
 import Dining from "../Components/Dining.jsx";
@@ -12,53 +12,54 @@ import Entertainment from "../Components/Entertainment.jsx";
 import "react-datepicker/dist/react-datepicker.css";
 import Modal from "react-modal";
 import Footer from "../Components/Footer.jsx";
-import Header from "../Components/Header.jsx";
+import Header2 from "../Components/Header2.jsx";
 
 const images = [image1, room3, image3];
 
-function TermModal({ isOpen, onRequestClose }) {
-  const [hasAgreed, setHasAgreed] = useState(false);
+// function TermModal({ isOpen, onRequestClose }) {
+//   const [hasAgreed, setHasAgreed] = useState(false);
 
-  return (
-    <Modal
-      isOpen={isOpen}
-      onRequestClose={onRequestClose}
-      style={{
-        content: {
-          margin: "200px 400px",
-          padding: "100px 150px", // 100px vertical padding, 50px horizontal padding
-        },
-      }}
-    >
-      <h2>Terms and Conditions</h2>
-      <ul>
-        <li>Term 1: Description of term 1</li>
-        <li>Term 2: Description of term 2</li>
-        <li>Term 3: Description of term 3</li>
-        {/* Add more terms and conditions as needed */}
-      </ul>
-      <div>
-        <input
-          type="checkbox"
-          id="agree"
-          name="agree"
-          value="agree"
-          onChange={() => setHasAgreed(!hasAgreed)}
-        />
-        <label htmlFor="agree">
-          I have read and agree to the terms and conditions
-        </label>
-      </div>
-      <button disabled={!hasAgreed} onClick={onRequestClose}>
-        I Agree
-      </button>
-    </Modal>
-  );
-}
+//   return (
+//     <Modal
+//       isOpen={isOpen}
+//       onRequestClose={onRequestClose}
+//       style={{
+//         content: {
+//           margin: "200px 400px",
+//           padding: "100px 150px", // 100px vertical padding, 50px horizontal padding
+//         },
+//       }}
+//     >
+//       <h2>Terms and Conditions</h2>
+//       <ul>
+//         <li>Term 1: Description of term 1</li>
+//         <li>Term 2: Description of term 2</li>
+//         <li>Term 3: Description of term 3</li>
+//         {/* Add more terms and conditions as needed */}
+//       </ul>
+//       <div>
+//         <input
+//           type="checkbox"
+//           id="agree"
+//           name="agree"
+//           value="agree"
+//           onChange={() => setHasAgreed(!hasAgreed)}
+//         />
+//         <label htmlFor="agree">
+//           I have read and agree to the terms and conditions
+//         </label>
+//       </div>
+//       <button disabled={!hasAgreed} onClick={onRequestClose}>
+//         I Agree
+//       </button>
+//     </Modal>
+//   );
+// }
 
-function App() {
+function Home2() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [termModalIsOpen, setTermModalIsOpen] = useState(true);
+  const home2 = true;
 
   const [refDining, inViewDining] = useInView({
     triggerOnce: false,
@@ -87,7 +88,7 @@ function App() {
 
   return (
     <>
-      <Header></Header>
+      <Header2></Header2>
       <div className="relative w-full h-256">
         {images.map((image, index) => (
           <div
@@ -143,7 +144,7 @@ function App() {
             opacity: inViewAccommendation ? 1 : 0,
           }}
         >
-          <Accomendation bigImage={room1} smallImage={room2} />
+          <Accomendation bigImage={room1} smallImage={room2} home2={home2} />
         </div>
 
         <div
@@ -154,7 +155,7 @@ function App() {
             opacity: inViewDining ? 1 : 0,
           }}
         >
-          <Dining />
+          <Dining home2={home2} />
         </div>
 
         <div
@@ -167,18 +168,18 @@ function App() {
             opacity: inViewEntertainment ? 1 : 0,
           }}
         >
-          <Entertainment />
+          <Entertainment home2={home2} />
         </div>
       </div>
-      <TermModal
+      {/* <TermModal
         isOpen={termModalIsOpen}
         onRequestClose={() => {
           setTermModalIsOpen(false);
         }}
-      />
+      /> */}
       <Footer />
     </>
   );
 }
 
-export default App;
+export default Home2;

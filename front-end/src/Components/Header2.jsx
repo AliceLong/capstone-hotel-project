@@ -20,27 +20,30 @@ const Header = () => {
           <div className="md:flex md:items-center md:justify-between">
             <div className="flex justify-between items-center">
               <div className="text-xl font-semibold">
-                <button className="text-white text-xl italic font-body md:text-2xl group-hover:text-black">
+                <Link
+                  to="/ꓕμԍ%203Ɩϝμ%20μoϝԍɼ"
+                  className="text-white text-xl italic font-body md:text-2xl group-hover:text-black"
+                >
                   The 31th Hotel
-                </button>
+                </Link>
               </div>
             </div>
             <div className="flex justify-between items-center md:flex-grow">
               <div className="flex justify-center flex-grow">
                 <Link
-                  to="/error"
+                  to="/room"
                   className="block mx-4 mt-2 md:mt-0 text-sm font-body text-white capitalize group-hover:text-black"
                 >
                   Accomendation
                 </Link>
                 <Link
-                  to="/error"
+                  to="/dining"
                   className="block mx-4 mt-2 md:mt-0 text-sm font-body text-white capitalize group-hover:text-black"
                 >
                   Dining
                 </Link>
                 <Link
-                  to="/error"
+                  to="/entertainment"
                   className="block mx-4 mt-2 md:mt-0 text-sm font-body text-white capitalize group-hover:text-black"
                 >
                   Entertainment

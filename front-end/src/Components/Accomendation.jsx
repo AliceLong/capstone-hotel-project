@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const Accommodations = ({ bigImage, smallImage }) => {
+const Accommodations = ({ bigImage, smallImage, home2 }) => {
   // State to track the text
   const defaultText =
     "Hotel rooms offer a range of views, from vibrant cityscapes with twinkling lights, to serene natural landscapes like gardens or oceans. Some overlook historic landmarks, providing a glimpse into the past, ensuring a personalized stay for every guest.";
@@ -37,12 +38,21 @@ const Accommodations = ({ bigImage, smallImage }) => {
             <p className="text-left text-sm font-regular font-body mt-4 bg-red-500 text-white">
               {texts[textIndex]}
             </p>
-            <button
-              className="my-5 ml-0 inline-block py-2 px-6 text-sm font-body text-white capitalize bg-black hover:border-black hover:border hover:bg-white hover:text-black"
-              onClick={handleAccommodationsClick}
-            >
-              Accommodations
-            </button>
+            {home2 ? (
+              <Link
+                to="/room"
+                className="my-5 ml-0 inline-block py-2 px-6 text-sm font-body text-white capitalize bg-black hover:border-black hover:border hover:bg-white hover:text-black"
+              >
+                Accommodations
+              </Link>
+            ) : (
+              <button
+                className="my-5 ml-0 inline-block py-2 px-6 text-sm font-body text-white capitalize bg-black hover:border-black hover:border hover:bg-white hover:text-black"
+                onClick={handleAccommodationsClick}
+              >
+                Accommodations
+              </button>
+            )}
           </div>
         </div>
       </div>

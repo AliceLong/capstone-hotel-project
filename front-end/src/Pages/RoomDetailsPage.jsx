@@ -5,13 +5,13 @@ import bedroom1 from "../images/one bedroom.jpg";
 import bathroom from "../images/bathroom.jpg";
 import bedroom2 from "../images/one_bedroom_2.png";
 import bedroom3 from "../images/one_bedroom_3.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const rooms = [
   {
     title: "Deluxe One Bedroom Suite",
     description:
-      "Indulge in our 310-square-foot Deluxe One Bedroom Suite, a tastefully designed haven exuding luxury. The master bedroom features a king-sized bed, while a separate living area, adorned with timeless retro-style standing mirrors, provides a stylish space for relaxation. Admire stunning views of the Manhattan skyline through expansive windows, creating an ever-changing cityscape backdrop. The spacious bathroom, a blend of luxury and functionality, offers upscale amenities for a pampering experience. Lush greens placed throughout the suite add a touch of nature, fostering a refreshing and tranquil environment. Whether glimpsed through the windows or thoughtfully incorporated within, these green accents enhance the overall sense of serenity. Immerse yourself in a rejuvenating bath or modern shower, surrounded by an ambiance of sophistication.Carefully curated for a sophisticated and memorable stay, our Deluxe One Bedroom Suite seamlessly integrates retro-chic decor with panoramic city views. Every detail, from the decor to the amenities, has been thoughtfully considered to provide an extraordinary experience. Welcome to a stylish retreat where luxury meets the vibrant energy of Manhattan.",
+      "Indulge in our 310-square-foot Deluxe One Bedroom Suite, a tastefully designed haven exuding luxury. The master bedroom features a king-sized bed, while a separate living area, adorned with timeless retro-style standing mirrors, provides a stylish space for relaxation.",
     includes: [
       "Daily a la carte breakfast for two guests at 31th Bistro",
       "In-room fully stocked wet bar",
@@ -44,7 +44,11 @@ const rooms = [
       "There are mirrors all over the room. They are SAFE.",
       "There is no in-door service. Do not allow any staff to enter the room",
     ],
-    images: ["images deleted", "images deleted", "images deleted"],
+    images: [
+      "The image is deleted due to &#20837;&#20405;;",
+      "The image is deleted due to &#20837;&#20405;;",
+      "The image is deleted due to &#20837;&#20405;;",
+    ],
   },
   {
     title: "Terrance Suite",
@@ -52,31 +56,36 @@ const rooms = [
       "This is Room Type OPC2RS , a minimumn of 4 people is required to stay in this room for more than 10 hours per day",
     includes: ["Daily a la carte breakfast for two guests at 31th Bistro"],
     amenities: [
+      "There is no Terrance in the room. Do not open the balcony door",
       "We do not have any fridge in the room, if you notice a fridge in the room, do not consume any food within it and contact our maintainence department with telephone provided in the room​",
       "Our TV only play chanel 23 and chanel 41. If you notice TV playing any chanel other than these two, contact our maintainence department as soon as possible​",
       "There is no internect connection or service in the room. Do not answer any call from your phone even it is from your friend or family. It is not them calling you",
       "There are mirrors all over the room. They are SAFE.",
       "There is no in-door service. Do not allow any staff to enter the room",
-      "There is no Terrance in the room. Do not open the balcony door",
     ],
-    images: ["images deleted", "images deleted", "images deleted"],
+    images: [
+      "The image is deleted due to &#x5165;&#x4FB5;",
+      "The image is deleted due to &#x5165;&#x4FB5;",
+      "The image is deleted due to &#x5165;&#x4FB5;",
+    ],
   },
   {
     title: "Family Home",
     description: "Deleted Room ",
-    includes: [
-      "The reflection in the mirror should be the up side down image.",
-    ],
-    amenities: ["Mirror", "Mirror", "Mirror", "Mirror", "Mirror"],
+    includes: ["wᴉʁʁoʁ"],
+    amenities: [],
     images: [
       "The reflection in the mirror should be the up side down image.",
-      "Stay away from mirror if you see the reflectio not up side donw.",
-      "It mean it has target you",
+      "Stay away from mirror if the reflection is wrong.",
+      "It mean it has targetted you",
     ],
   },
 ];
 
 const RoomDetailsPage = () => {
+  const location = useLocation();
+  console.log(location);
+
   const { title } = useParams();
   const decodedTitle = decodeURIComponent(title);
 

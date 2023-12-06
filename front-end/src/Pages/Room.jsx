@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import Header from "../Components/Header";
+import Header2 from "../Components/Header2";
 import Footer from "../Components/Footer";
 import bedroom2 from "../images/Bedroom2.jpg";
 import bedroom3 from "../images/Bedroom3.jpg";
@@ -92,7 +92,7 @@ const Room = () => {
 
   return (
     <div>
-      <Header></Header>
+      <Header2></Header2>
       <div>
         <div className="relative w-full">
           {/* Replace the following images with your actual image paths */}
@@ -132,7 +132,10 @@ const Room = () => {
             return (
               <div
                 key={index}
-                style={roomStyle}
+                style={{
+                  ...roomStyle,
+                  pointerEvents: index !== 0 && firstVisit ? "none" : "auto",
+                }}
                 className={index !== 0 && firstVisit ? "" : "cursor-pointer"}
                 onClick={() => handleRoomClick(index)}
               >

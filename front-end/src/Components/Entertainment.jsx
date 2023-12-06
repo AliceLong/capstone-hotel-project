@@ -6,7 +6,7 @@ import room1 from "../images/room1.png";
 import room2 from "../images/room2.jpg";
 import room3 from "../images/room3.jpg";
 
-const Entertainment = () => {
+const Entertainment = ({ home2 }) => {
   const images = [image1, image2, image3, room1, room2, room3];
   const descriptions = ["SPA", "SWIMMING", "GARDEN"];
 
@@ -18,17 +18,26 @@ const Entertainment = () => {
       <div className="flex overflow-x-auto">
         <div className="flex space-x-2">
           {images.map((image, index) => (
-            <div key={index} className="relative">
+            <div
+              key={index}
+              className={`relative ${
+                index === 0 && home2
+                  ? "hover:translate-y-[-10px] transition-transform duration-200"
+                  : ""
+              }`}
+            >
               <img
                 src={image}
                 alt={`Entertainment ${index + 1}`}
                 className="object-cover h-96 w-96"
               />
-              <div className="absolute inset-0 bg-black opacity-50 flex items-center justify-center">
-                <p className="text-3xl text-white italic font-body">
-                  Coming Soon
-                </p>
-              </div>
+              {index !== 0 || !home2 ? (
+                <div className="absolute inset-0 bg-black opacity-50 flex items-center justify-center">
+                  <p className="text-3xl text-white italic font-body">
+                    Coming Soon
+                  </p>
+                </div>
+              ) : null}
             </div>
           ))}
         </div>

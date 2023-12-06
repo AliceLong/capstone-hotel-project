@@ -4,7 +4,7 @@ import image2 from "../images/AdobeStock_575552556.jpeg";
 import image3 from "../images/AdobeStock_629069571.jpeg";
 import { Link } from "react-router-dom";
 
-const Dining = () => {
+const Dining = (home2) => {
   const [selectedOption, setSelectedOption] = useState("coffee");
   const [text, setText] = useState("");
 
@@ -25,7 +25,7 @@ const Dining = () => {
             The 31th Hotel offers unforgettable food and drink options. Start
             your day with spendid buffet in 31th Bistro and then stop by the
             Cafe for a cup of coffee and a pastry. Enjoy private dinner at the
-            award-winning seafood cuisine at the club room. In door
+            award-winning seafood cuisine at the club room.
           </p>
           <button
             className="text-left text-xl uppercase font-semibold font-body mt-4 border-b-2 text-black hover:text-gray-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
