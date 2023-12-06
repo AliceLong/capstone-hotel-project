@@ -77,9 +77,12 @@ const Welcome = () => {
               >
                 Go back
               </Link>
-              <button className="ml-0 inline-block py-2 px-6 text-xs font-body text-white capitalize bg-black hover:border-black hover:border hover:bg-white hover:text-black">
-                I have finished reading
-              </button>
+              <Link
+                to="/ꓕμԍ 3Ɩϝμ μoϝԍɼ"
+                className="ml-0 inline-block py-2 px-6 text-xs font-body text-white capitalize bg-black hover:border-black hover:border hover:bg-white hover:text-black"
+              >
+                Finish booking
+              </Link>
             </div>
           </div>
         ))}
