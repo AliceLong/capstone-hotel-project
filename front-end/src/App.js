@@ -11,6 +11,7 @@ import TermCondition from "./Pages/TermCondition";
 import Welcome from "./Pages/Welcome";
 import Room from "./Pages/Room";
 import RoomDetailsPage from "./Pages/RoomDetailsPage";
+import DiningDetails from "./Pages/DiningDetails";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/Room" element={<Room />} />
         <Route path="/Welcome" element={<Welcome />} />
         <Route path="/Room/:title" element={<RoomDetailsPage />} />
+        <Route path="/DiningDetails" element={<DiningDetails />} />
       </Routes>
     </Router>
   );

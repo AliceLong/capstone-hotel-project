@@ -1,8 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import livingroom1 from "../images/livingroom1.png";
-import bedroom1 from "../images/one bedroom.jpg";
-import bathroom from "../images/bathroom.jpg";
+import bedroom1 from "../images/one_bedroom_1.jpg";
 import bedroom2 from "../images/one_bedroom_2.png";
 import bedroom3 from "../images/one_bedroom_3.png";
 import { Link, useLocation } from "react-router-dom";
@@ -121,14 +120,14 @@ const RoomDetailsPage = () => {
         <h1 className="text-black text-3xl italic font-body my-[10%]">
           The 31th Hotel
         </h1>
-        <h1 className="text-gray text-2xl font-semibold uppercase font-body border-t border-white my-[5%]">
+        <h1 className="text-gray text-2xl font-semibold uppercase font-body border-t border-white my-[10%]">
           {room ? room.title : "Room not found"}
         </h1>
         <div className=" text-gray-800 text-left font-title text-base leading-7 ">
           <p>{room ? room.description : "No description available"}</p>
           <p className=" font-bold mt-[10%] mb-2 uppercase"> Amenity:</p>
           {room ? (
-            <ul>
+            <ul className="space-y-2">
               {room.amenities.map((amenities, index) => (
                 <li key={index}>{amenities}</li>
               ))}
@@ -139,7 +138,7 @@ const RoomDetailsPage = () => {
           <p className=" font-bold  mt-[10%] mb-2 uppercase"> Include:</p>
 
           {room ? (
-            <ul>
+            <ul className="space-y-2">
               {room.includes.map((includes, index) => (
                 <li key={index}>{includes}</li>
               ))}

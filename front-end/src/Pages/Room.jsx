@@ -3,15 +3,19 @@ import { useNavigate } from "react-router-dom";
 
 import Header2 from "../Components/Header2";
 import Footer from "../Components/Footer";
-import bedroom2 from "../images/Bedroom2.jpg";
-import bedroom3 from "../images/Bedroom3.jpg";
-import bedroom1 from "../images/one bedroom.jpg";
-import terrance1 from "../images/Terrance.jpg";
-import terrance2 from "../images/Terrance2.png";
+import bedroom1 from "../images/one_bedroom_1.jpg";
+import bedroom2 from "../images/two_bedroom_1.jpg";
+import terrance from "../images/terrance_2.png";
+import familyRoom from "../images/family_room_1.jpg";
+import bedroom1_revised from "../images/one_bedroom_1_revised.png";
+import bedroom2_revised from "../images/two_bedroom_1_revised.jpg";
+import terrance_revised from "../images/terrance_2_revised.png";
+import familyRoom_revised from "../images/family_room_1_revised.jpg";
 
 const Room = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [firstVisit, setFirstVisit] = useState(true); // Add state for first visit
+  const [secondVisit, setSecondVisit] = useState(false); // Add state for second visit
 
   const navigate = useNavigate();
   const clearLocalStorage = () => {
@@ -21,6 +25,7 @@ const Room = () => {
   const rooms = [
     {
       src: bedroom1,
+      src2: bedroom1_revised,
       alt: "Room 1",
       title: "Deluxe One Bedroom Suite",
       description:
@@ -28,20 +33,23 @@ const Room = () => {
     },
     {
       src: bedroom2,
+      src2: bedroom2_revised,
       alt: "Room 2",
       title: "Deluxe Two Bedroom Suite",
       description:
         "Double the enjoyment with our spacious Two Bedroom Suite, including a master bedroom, a separate living room, and an adjacent bedroom for the comfortable accommodation of four guests.",
     },
     {
-      src: terrance2,
+      src: terrance,
+      src2: terrance_revised,
       alt: "This Room does not exist in 31th hotel",
       title: "Terrance Suite",
       description:
         "Enjoy a outdoor private terrance with fireplace. Interiror includes an master bedroom and a dining area. The suite is located on the top floor of the hotel, offering a panoramic view of the city.",
     },
     {
-      src: bedroom3,
+      src: familyRoom,
+      src2: familyRoom_revised,
       alt: "This Room does not exist in 31th hotel",
       title: "Family Home",
       description:
@@ -56,6 +64,11 @@ const Room = () => {
     console.log(visited);
     if (visited) {
       setFirstVisit(false);
+    }
+
+    const secondVisit = localStorage.getItem("secondVisit");
+    if (secondVisit) {
+      setSecondVisit(true);
     }
 
     // Event listener for scrolling
@@ -75,6 +88,10 @@ const Room = () => {
     if (index === 0) {
       // Set the local storage to mark the visit
       localStorage.setItem("Visit", "true");
+    }
+    if (index !== 0) {
+      // Set the local storage to mark the second visit
+      localStorage.setItem("secondVisit", "true");
     }
 
     navigate(`/Room/${encodeURIComponent(rooms[index].title)}`);
@@ -141,7 +158,7 @@ const Room = () => {
               >
                 <div className="relative">
                   <img
-                    src={room.src}
+                    src={secondVisit ? room.src2 : room.src}
                     alt={room.alt}
                     className="w-full h-auto object-cover"
                   />

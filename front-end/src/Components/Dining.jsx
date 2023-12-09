@@ -13,7 +13,7 @@ const Dining = (home2) => {
     highDining: image2,
     buffet: image3,
   };
-
+  console.log(home2);
   return (
     <div className="p-20 mx-[10%] relative">
       <div className="flex">
@@ -51,13 +51,23 @@ const Dining = (home2) => {
           >
             The 31th Bistro
           </button>
-          <Link
-            to="/SpecialOfferCode:<Code>"
-            className="text-left text-xl uppercase font-semibold font-body mt-4 bg-transparent text-white hover:text-red-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
-            onMouseEnter={() => setText("don't click this button")}
-          >
-            Special Offer
-          </Link>
+          {home2 ? (
+            <Link
+              to="/SpecialOfferCode:<Code>"
+              className="text-left text-xl uppercase font-semibold font-body mt-4 bg-transparent text-white hover:text-red-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
+              onMouseEnter={() => setText("don't click this button")}
+            >
+              Special Offer
+            </Link>
+          ) : (
+            <Link
+              to="/DiningDetails"
+              className="text-left text-xl uppercase font-semibold font-body mt-4 bg-transparent border-b-2 text-blac hover:text-red-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
+              onMouseEnter={() => setText("don't click this button")}
+            >
+              The most iconic night bar
+            </Link>
+          )}
         </div>
         <div className="w-1/2 h-1/2 pl-[10%] relative">
           <img
