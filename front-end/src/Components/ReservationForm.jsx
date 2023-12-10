@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios"; // Make sure to install axios with npm install axios
 
 const ReservationForm = (reserveType) => {
   const [form, setForm] = useState({
@@ -37,7 +38,7 @@ const ReservationForm = (reserveType) => {
     setTouched({ ...touched, [e.target.name]: true });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Check for errors
@@ -60,8 +61,15 @@ const ReservationForm = (reserveType) => {
     ) {
       // Save form data in local storage
       console.log(form);
-      localStorage.setItem("reservationData", JSON.stringify(form));
-      console.log(localStorage);
+      try {
+        const response = await axios.post(
+          "http://localhost:5002/form/submit",
+          form
+        );
+        console.log(response.data); // Log the response data from the server
+      } catch (error) {
+        console.error("Error submitting form: ", error);
+      }
     }
   };
 
