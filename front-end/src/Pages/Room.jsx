@@ -127,19 +127,23 @@ const Room = () => {
             Room and Suite
           </p>
           <p className="text-white leading-6 text-sm font-title ">
-            Embark on a refined journey at Hotel 31th, NYC, where our suites
-            redefine luxury living. Indulge in spa-inspired bathrooms, complete
-            with expansive soaking tubs, marble rain showers, and dual
-            vanities.Weave-covered walls are adorned with vintage sconces and
-            gilded brass mirrors. Revel in captivating city views through
-            expansive windows, and unwind in oversized king beds adorned with
-            bespoke linens for a restful night's sleep. Hotel 31th Suite offers
-            an unparalleled escape—a sanctuary where each detail reflects a
-            perfect blend of sophistication and comfort.
+            Embark on an immersive nature-centered experience at Hotel 31th,
+            NYC, where our suites redefine luxury living with a harmonious
+            fusion of modern elegance and natural elements. Envelop yourself in
+            spa-inspired bathrooms featuring expansive soaking tubs, marble rain
+            showers, and dual vanities. The walls are adorned with woven
+            textures, complemented by vintage sconces and gilded brass mirrors,
+            creating a seamless connection to nature. Gaze upon captivating city
+            views through expansive windows, while the room's wood-themed
+            furniture and abundant plants evoke a serene atmosphere. Unwind in
+            oversized king beds dressed in bespoke linens, ensuring a tranquil
+            night's sleep. Hotel 31th Suite is a haven, where every detail
+            reflects a perfect synthesis of sophistication and comfort,
+            immersing guests in a nature-inspired sanctuary.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-[5%] my-[10%] mx-[10%] px-[5%]">
+        <div className="grid grid-cols-2 gap-[5%] my-[10%] mx-[5%] px-[5%]">
           {rooms.map((room, index) => {
             const roomStyle = {
               transform: `translateY(${-scrollPosition / 4}px)`,

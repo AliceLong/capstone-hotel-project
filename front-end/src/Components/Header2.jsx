@@ -37,7 +37,7 @@ const Header = () => {
                   Accomendation
                 </Link>
                 <Link
-                  to="/dining"
+                  to="/DiningDetails"
                   className="block mx-4 mt-2 md:mt-0 text-sm font-body text-white capitalize group-hover:text-black"
                 >
                   Dining

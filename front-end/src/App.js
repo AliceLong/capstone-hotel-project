@@ -10,7 +10,7 @@ import Home2 from "./Pages/Home2";
 import TermCondition from "./Pages/TermCondition";
 import Welcome from "./Pages/Welcome";
 import Room from "./Pages/Room";
-import RoomDetailsPage from "./Pages/RoomDetailsPage";
+import RoomDetailsPage from "./Pages/RoomDetailsPage.jsx";
 import DiningDetails from "./Pages/DiningDetails";
 
 function App() {

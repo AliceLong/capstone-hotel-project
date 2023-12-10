@@ -33,7 +33,7 @@ const Dining = (home2) => {
             onMouseDown={() => setText("Here")}
             onMouseUp={() => setText("")}
           >
-            Cafe
+            Cafe 31th
           </button>
           <button
             className="text-left text-xl uppercase font-semibold font-body mt-4 border-b-2 text-black hover:text-gray-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
