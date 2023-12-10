@@ -11,29 +11,49 @@ router.post("/submit", (req, res) => {
   const formData = req.body;
   console.log(formData);
 
-  // Create a new object with the form data, the user ID, and the submission time
   const newUser = {
     userId: uuidv4(),
     name: formData.name,
     phone: formData.phone,
     email: formData.email,
     reserveType: formData.reserveType,
-    submissionTime: new Date(), // Add this line
+    submissionTime: new Date(),
   };
 
-  // Convert the newUser object to JSON
-  const json = JSON.stringify(newUser, null, 2);
-
-  // Write the JSON to userData.json
-  fs.writeFile("./data/userData.json", json, (err) => {
+  fs.readFile("./data/userData.json", (err, data) => {
     if (err) {
-      console.error("Error writing file:", err);
-      res.status(500).json({ message: "Error saving form data" });
-    } else {
+      console.error("Error reading file:", err);
+      return res.status(500).json({ message: "Error reading existing data" });
+    }
+
+    // Parse the existing data
+    let existingData;
+    try {
+      existingData = JSON.parse(data);
+    } catch {
+      existingData = [];
+    }
+
+    if (!Array.isArray(existingData)) {
+      existingData = [];
+    }
+
+    // Add the new user to the existing data
+    existingData.push(newUser);
+
+    // Convert the data back to JSON
+    const json = JSON.stringify(existingData, null, 2);
+
+    // Write the JSON back to userData.json
+    fs.writeFile("./data/userData.json", json, (err) => {
+      if (err) {
+        console.error("Error writing file:", err);
+        return res.status(500).json({ message: "Error saving form data" });
+      }
+
       console.log("Form data saved to userData.json");
       res.json({ message: "Form submitted successfully" });
-    }
+    });
   });
 });
-
 module.exports = router;

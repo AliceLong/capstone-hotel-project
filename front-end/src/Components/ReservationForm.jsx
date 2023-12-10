@@ -67,6 +67,11 @@ const ReservationForm = (reserveType) => {
           form
         );
         console.log(response.data); // Log the response data from the server
+        if (form.reserveType === "Indoor Gourmet Service") {
+          // If the response data from the server is successful
+          alert("We will be right at your door soon");
+          window.location.href = "about:blank";
+        }
       } catch (error) {
         console.error("Error submitting form: ", error);
       }
@@ -75,15 +80,15 @@ const ReservationForm = (reserveType) => {
 
   return (
     <form
-      className="my-[5%] mx-[10%] px-[5%] py-[5%] text-left border font-title text-base"
+      className="my-[5%] mx-[10%] px-[5%] py-[5%] text-left font-title text-base border-gray-800 border-2 "
       onSubmit={handleSubmit}
     >
-      <p className="text-2xl font-regular font-title mb-[5%] italic">
+      <p className="text-2xl font-regular font-title mb-[5%] italic ">
         Plan Your Enjoyment Today
       </p>
-      <div className="grid grid-cols-2 gap-[5%] my-[5%] uppercase font-medium	">
+      <div className="grid grid-cols-2 gap-[5%] my-[5%] uppercase font-medium  text-gray-500	">
         <label
-          className={`border-b border-gray-300 my-[3%] ${
+          className={`border-b border-gray-800 my-[3%] ${
             errors.name ? "error" : ""
           }`}
         >
@@ -94,7 +99,7 @@ const ReservationForm = (reserveType) => {
           )}
         </label>
         <label
-          className={`border-b border-gray-300 my-[3%] ${
+          className={`border-b border-gray-800 my-[3%] ${
             errors.email ? "error" : ""
           }`}
         >
@@ -105,7 +110,7 @@ const ReservationForm = (reserveType) => {
           )}
         </label>
         <label
-          className={`border-b border-gray-300 my-[3%] ${
+          className={`border-b border-gray-800  my-[3%] ${
             errors.phone ? "error" : ""
           }`}
         >
@@ -116,17 +121,22 @@ const ReservationForm = (reserveType) => {
           )}
         </label>
         <label
-          className={`border-b border-gray-300 my-[3%] ${
+          className={`border-b border-gray-800  my-[3%] ${
             errors.reserveType ? "error" : ""
           }`}
         >
           Reserve Type:*
-          <input
-            type="text"
+          <select
             name="reserveType"
-            value={form.reserveType} // Display the reserveType from the form state
-            readOnly // Make the input field read-only
-          />
+            value={form.reserveType}
+            onChange={handleChange}
+          >
+            <option value="">--Please choose an option--</option>
+            <option value="Indoor Gourmet Service">
+              Indoor Gourmet Service
+            </option>
+            <option value="Club Room">Club Room</option>
+          </select>
           {errors.reserveType && (
             <span className="text-red-500">This field is required</span>
           )}
