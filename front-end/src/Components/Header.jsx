@@ -20,16 +20,19 @@ const Header = () => {
           <div className="md:flex md:items-center md:justify-between">
             <div className="flex justify-between items-center">
               <div className="text-xl font-semibold">
-                <Link
-                  to="/error"
-                  className="text-white text-xl italic font-body md:text-2xl group-hover:text-black"
-                >
+                <button className="text-white text-xl italic font-body md:text-2xl group-hover:text-black">
                   The 31th Hotel
-                </Link>
+                </button>
               </div>
             </div>
             <div className="flex justify-between items-center md:flex-grow">
               <div className="flex justify-center flex-grow">
+                <Link
+                  to="/error"
+                  className="block mx-4 mt-2 md:mt-0 text-sm font-body text-white capitalize group-hover:text-black"
+                >
+                  Accomendation
+                </Link>
                 <Link
                   to="/error"
                   className="block mx-4 mt-2 md:mt-0 text-sm font-body text-white capitalize group-hover:text-black"
@@ -41,12 +44,6 @@ const Header = () => {
                   className="block mx-4 mt-2 md:mt-0 text-sm font-body text-white capitalize group-hover:text-black"
                 >
                   Entertainment
-                </Link>
-                <Link
-                  to="/error"
-                  className="block mx-4 mt-2 md:mt-0 text-sm font-body text-white capitalize group-hover:text-black"
-                >
-                  Gallery
                 </Link>
               </div>
               <div className="hidden md:block">

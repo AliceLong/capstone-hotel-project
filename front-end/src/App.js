@@ -9,7 +9,9 @@ import SpecialOffer from "./Pages/SpecialOffer";
 import Home2 from "./Pages/Home2";
 import TermCondition from "./Pages/TermCondition";
 import Welcome from "./Pages/Welcome";
-import AccomendationPage from "./Pages/AccomendationPage";
+import Room from "./Pages/Room";
+import RoomDetailsPage from "./Pages/RoomDetailsPage.jsx";
+import DiningDetails from "./Pages/DiningDetails";
 
 function App() {
   return (
@@ -22,7 +24,10 @@ function App() {
         <Route path="/ꓕμԍ 3Ɩϝμ μoϝԍɼ" element={<Home2 />} />
         <Route path="/TermCondition/:flag?" element={<TermCondition />} />
         <Route path="/Loading" element={<Welcome />} />
-        <Route path="/AccomendationPage/:id?" element={<AccomendationPage />} />
+        <Route path="/Room" element={<Room />} />
+        <Route path="/Welcome" element={<Welcome />} />
+        <Route path="/Room/:title" element={<RoomDetailsPage />} />
+        <Route path="/DiningDetails" element={<DiningDetails />} />
       </Routes>
     </Router>
   );

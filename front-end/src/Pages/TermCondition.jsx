@@ -1,10 +1,8 @@
 import { useRef, useEffect, useState, createRef } from "react";
-import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import image1 from "../images/AdobeStock_323023398.jpeg";
 import Footer from "../Components/Footer";
-import { useInView } from "react-intersection-observer";
 
 const policiesData = [
   {

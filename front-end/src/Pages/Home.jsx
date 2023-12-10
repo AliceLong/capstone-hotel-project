@@ -14,6 +14,7 @@ import Footer from "../Components/Footer.jsx";
 import Header from "../Components/Header.jsx";
 
 const images = [image1, room3, image3];
+const home2 = false;
 
 function App() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -95,7 +96,7 @@ function App() {
             opacity: inViewAccommendation ? 1 : 0,
           }}
         >
-          <Accomendation bigImage={room1} smallImage={room2} />
+          <Accomendation bigImage={room1} smallImage={room2} home2={home2} />
         </div>
 
         <div
@@ -106,7 +107,7 @@ function App() {
             opacity: inViewDining ? 1 : 0,
           }}
         >
-          <Dining />
+          <Dining home2={home2} />
         </div>
 
         <div
@@ -119,7 +120,7 @@ function App() {
             opacity: inViewEntertainment ? 1 : 0,
           }}
         >
-          <Entertainment />
+          <Entertainment home2={home2} />
         </div>
       </div>
 

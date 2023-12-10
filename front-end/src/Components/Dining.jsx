@@ -4,7 +4,7 @@ import image2 from "../images/AdobeStock_575552556.jpeg";
 import image3 from "../images/AdobeStock_629069571.jpeg";
 import { Link } from "react-router-dom";
 
-const Dining = () => {
+const Dining = (home2) => {
   const [selectedOption, setSelectedOption] = useState("coffee");
   const [text, setText] = useState("");
 
@@ -13,7 +13,7 @@ const Dining = () => {
     highDining: image2,
     buffet: image3,
   };
-
+  console.log(home2);
   return (
     <div className="p-20 mx-[10%] relative">
       <div className="flex">
@@ -25,7 +25,7 @@ const Dining = () => {
             The 31th Hotel offers unforgettable food and drink options. Start
             your day with spendid buffet in 31th Bistro and then stop by the
             Cafe for a cup of coffee and a pastry. Enjoy private dinner at the
-            award-winning seafood cuisine at the club room. In door
+            award-winning seafood cuisine at the club room.
           </p>
           <button
             className="text-left text-xl uppercase font-semibold font-body mt-4 border-b-2 text-black hover:text-gray-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
@@ -33,7 +33,7 @@ const Dining = () => {
             onMouseDown={() => setText("Here")}
             onMouseUp={() => setText("")}
           >
-            Cafe
+            Cafe 31th
           </button>
           <button
             className="text-left text-xl uppercase font-semibold font-body mt-4 border-b-2 text-black hover:text-gray-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
@@ -51,13 +51,23 @@ const Dining = () => {
           >
             The 31th Bistro
           </button>
-          <Link
-            to="/SpecialOfferCode:<Code>"
-            className="text-left text-xl uppercase font-semibold font-body mt-4 bg-transparent text-white hover:text-red-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
-            onMouseEnter={() => setText("don't click this button")}
-          >
-            Special Offer
-          </Link>
+          {home2 ? (
+            <Link
+              to="/SpecialOfferCode:<Code>"
+              className="text-left text-xl uppercase font-semibold font-body mt-4 bg-transparent text-white hover:text-red-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
+              onMouseEnter={() => setText("don't click this button")}
+            >
+              Special Offer
+            </Link>
+          ) : (
+            <Link
+              to="/DiningDetails"
+              className="text-left text-xl uppercase font-semibold font-body mt-4 bg-transparent border-b-2 text-blac hover:text-red-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
+              onMouseEnter={() => setText("don't click this button")}
+            >
+              The most iconic night bar
+            </Link>
+          )}
         </div>
         <div className="w-1/2 h-1/2 pl-[10%] relative">
           <img

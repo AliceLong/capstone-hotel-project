@@ -65,11 +65,17 @@ const Welcome = () => {
             <p className="text-black text-center text-base font-regular font-body  mx-[5vw] mb-[2vh]">
               Please read our policies carefully before confirming booking
             </p>
-            <p className="text-red-500 text-center text-sm underline mx-[5vw] mb-[2vh]">
-              If you haven't consumed any food provided by hotel, leave now.
-              Else, you have become GUEST. You need to stay in the hotel for at
-              least 3 days. Find the right rules to follow
-            </p>
+            <div className="text-red-500 text-left text-sm underline mx-[5vw] mb-[2vh]">
+              <p>
+                If you haven't consumed any food provided by hotel, leave now.
+                Else, you are the Hotel GUEST. You need to stay in the hotel for
+                at least three days.
+              </p>
+              <p>
+                Do not expose any of our personal information. Do not become
+                part of them
+              </p>
+            </div>
             <div className="flex col-2 justify-center gap-2 gap-x-20 mx-[5vw] mb-[2vh]">
               <Link
                 to="/TermCondition/revisited"
@@ -77,9 +83,12 @@ const Welcome = () => {
               >
                 Go back
               </Link>
-              <button className="ml-0 inline-block py-2 px-6 text-xs font-body text-white capitalize bg-black hover:border-black hover:border hover:bg-white hover:text-black">
-                I have finished reading
-              </button>
+              <Link
+                to="/ꓕμԍ 3Ɩϝμ μoϝԍɼ"
+                className="ml-0 inline-block py-2 px-6 text-xs font-body text-white capitalize bg-black hover:border-black hover:border hover:bg-white hover:text-black"
+              >
+                Finish booking
+              </Link>
             </div>
           </div>
         ))}
