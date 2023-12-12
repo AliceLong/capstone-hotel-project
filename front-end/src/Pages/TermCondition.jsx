@@ -18,12 +18,12 @@ const policiesData = [
   {
     title: "Breakfast Service",
     content:
-      "Free breakfast is available in the 31th Bistro from 6:00 am to 9:00 am exclusively for hotel guests. Please refrain from entering the restaurant outside of these hours. Please noted that the restaurant is the only free food offered by the hotel during your stay. please make sure you fulfill your need for the day.",
+      "Free breakfast is available in the 31th Bistro from 6:00 am to 9:00 am exclusively for hotel guests. Please noted that the restaurant is the only free food offered by the hotel during your stay. please make sure you fulfill your need for the day.",
   },
   {
     title: "Dining",
     content:
-      "Our second floor offer dining services in Café, The 31th Bistro, and The Club Room. Please note that there is no bar located on the 31st floor of the hotel.",
+      "Our second floor offer dining services in Café, The 31th Bistro, and The Club Room. Please note that there is no bar.",
   },
   {
     title: "Employee Identification",

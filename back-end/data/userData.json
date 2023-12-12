@@ -1,0 +1,67 @@
+[
+  {
+    "userId": "6f96166f-c904-46b8-90df-5e0d36dc4550",
+    "name": "d****x",
+    "phone": "sdfds",
+    "email": "ds",
+    "reserveType": "Indoor Gourmet Service",
+    "submissionTime": "2023-12-10T06:00:28.222Z",
+    "initialSyn": 1,
+    "selected": "not selected",
+    "finalSyn": "N/A",
+    "pollutionRate": 9,
+    "condition": "Type D"
+  },
+  {
+    "userId": "6f96166f-c904-46b8-90df-5e0d36dc4550",
+    "name": "dfd",
+    "phone": "sdfds",
+    "email": "ds",
+    "reserveType": "Indoor Gourmet Service",
+    "submissionTime": "2023-12-10T06:00:28.222Z",
+    "initialSyn": 4,
+    "selected": "not selected",
+    "finalSyn": "N/A",
+    "pollutionRate": 9,
+    "condition": "Type D"
+  },
+  {
+    "userId": "6f96166f-c904-46b8-90df-5e0d36dc4550",
+    "name": "dfd",
+    "phone": "sdfds",
+    "email": "ds",
+    "reserveType": "Indoor Gourmet Service",
+    "submissionTime": "2023-12-12T06:00:28.222Z",
+    "initialSyn": 2,
+    "selected": "not selected",
+    "finalSyn": "N/A",
+    "pollutionRate": 5,
+    "condition": "Type E"
+  },
+  {
+    "userId": "6f96166f-c904-46b8-90df-5e0d36dc4550",
+    "name": "dfd",
+    "phone": "sdfds",
+    "email": "ds",
+    "reserveType": "Indoor Gourmet Service",
+    "submissionTime": "2023-12-12T06:00:28.222Z",
+    "initialSyn": 7,
+    "selected": "selected",
+    "finalSyn": "5",
+    "pollutionRate": 10,
+    "condition": "Type C"
+  },
+  {
+    "userId": "6f96166f-c904-46b8-90df-5e0d36dc4550",
+    "name": "dfd",
+    "phone": "sdfds",
+    "email": "ds",
+    "reserveType": "Indoor Gourmet Service",
+    "submissionTime": "2023-12-12T06:00:28.222Z",
+    "initialSyn": 2,
+    "selected": "not selected",
+    "finalSyn": "N/A",
+    "pollutionRate": 10,
+    "condition": "Type D"
+  }
+]

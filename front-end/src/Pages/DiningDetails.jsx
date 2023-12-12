@@ -5,8 +5,13 @@ import ReservationForm from "../Components/ReservationForm";
 import Header2 from "../Components/Header2";
 import Footer from "../Components/Footer";
 import dining_header from "../images/dining_header.jpg";
-import bistrol_1 from "../images/31th_Bistrol_1.jpg";
 import cafe_1 from "../images/Cafe_1.jpg";
+import bistrol_2 from "../images/31th_Bistrol_2.jpg";
+import door_service_1 from "../images/doorService_1.jpg";
+import clubroom_1 from "../images/clubroom_1.jpg";
+import Dining_handbook from "./31th Hotel Dining Department Staff Handbook.pdf";
+import bistro_menu from "./31th_bistro_menu_10_29.png";
+import note_from_unknown from "./IMG_2197.pdf";
 
 const DiningDetails = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -21,8 +26,18 @@ const DiningDetails = () => {
 
   const rooms = [
     {
-      src: bistrol_1,
-      src2: bistrol_1,
+      src: door_service_1,
+      alt: door_service_1,
+      title: "Indoor Gourmet Service",
+      description:
+        "A perfect place for family. The Home boasts three-and-a-half spacious baths, a full galley kitchen, dual fireplaces, and a generously proportioned open living and dining space, embodying a sense of tranquility and sophistication.",
+      operation_time:
+        " Breakfast: 6:30am - 11:00 am | All Day Menu: 11:am – 11:00pm",
+      reserve: true,
+    },
+    {
+      src: bistrol_2,
+      src2: bistrol_2,
       alt: "The 31th Bistro",
       title: "The 31th Bistro",
       description:
@@ -30,7 +45,6 @@ const DiningDetails = () => {
       operation_time: "Breakfast: 7:00am - 10:00am",
       reserve: false,
     },
-
     {
       src: cafe_1,
       src2: cafe_1,
@@ -42,24 +56,13 @@ const DiningDetails = () => {
       reserve: false,
     },
     {
-      src: cafe_1,
-      src2: cafe_1,
+      src: clubroom_1,
+      src2: clubroom_1,
       alt: "The Club Room",
       title: "The Club Room",
       description:
         "Enjoy a outdoor private terrance with fireplace. Interiror includes an master bedroom and a dining area. The suite is located on the top floor of the hotel, offering a panoramic view of the city.",
-      operation_time: "24 hours but only for club member reservation",
-      reserve: false,
-    },
-    {
-      src: dining_header,
-
-      alt: "The 13th Bar",
-      title: "Indoor Gourmet Service",
-      description:
-        "A perfect place for family. The Home boasts three-and-a-half spacious baths, a full galley kitchen, dual fireplaces, and a generously proportioned open living and dining space, embodying a sense of tranquility and sophistication.",
-      operation_time:
-        " Breakfast: 6:30am - 11:00 am | All Day Menu: 11:am – 11:00pmn",
+      operation_time: "24 hours but only for ꓕμԍ 3Ɩϝμ club member",
       reserve: true,
     },
   ];
@@ -80,13 +83,34 @@ const DiningDetails = () => {
   }, []);
 
   const handleRoomClick = (index) => {
-    if (rooms[index].reserve === true) {
-      // Scroll to the ReservationForm component
-      formRef.current.scrollIntoView({ behavior: "smooth" });
-      setReserveType(rooms[index].title); // Add this line
+    const room = rooms[index];
 
-      // navigate(`/Room/${encodeURIComponent(rooms[index].title)}`);
+    if (room.reserve) {
+      if (room.title === "The Club Room") {
+        alert(
+          "Suspicious files detected. Do not open it to prevent possible pollution."
+        );
+        downloadFile(Dining_handbook, "IMG_2197.pdf");
+      }
+
+      formRef.current.scrollIntoView({ behavior: "smooth" });
+      setReserveType(room.title);
+    } else if (room.title === "The 31th Bistro") {
+      window.open(bistro_menu, "_blank");
+      downloadFile(
+        note_from_unknown,
+        "[Confidential-III] Dining Department Staff Rules and Guidelines"
+      );
     }
+  };
+
+  const downloadFile = (fileUrl, fileName) => {
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const headerStyle = {
@@ -158,7 +182,6 @@ const DiningDetails = () => {
                   ...roomStyle,
                   pointerEvents: "auto",
                 }}
-                className="cursor-pointer"
               >
                 <div className="relative">
                   <img
@@ -170,13 +193,13 @@ const DiningDetails = () => {
                 <p className="text-3xl text-left font-semibold text-gray-800 font-body uppercase mt-[8%]">
                   {room.title}
                 </p>
-                <p className="text-left leading-5 text-sm font-title mt-[3%] mr-[20%]">
+                <p className="text-left leading-6 text-gray-700 text-base font-title mt-[3%] mr-[20%]">
                   {room.description}
                 </p>
-                <p className="text-left leading-5 text-sm uppercase font-bold font-title mt-[3%] mr-[20%]">
+                <p className="text-left leading-6 text-base uppercase font-bold font-title mt-[3%] mr-[20%]">
                   Operation Time:
                 </p>
-                <p className="text-left leading-5 text-sm font-title mr-[20%]">
+                <p className="text-left text-gray-700 leading-6 text-base font-title mr-[20%]">
                   {room.operation_time}
                 </p>
                 <button

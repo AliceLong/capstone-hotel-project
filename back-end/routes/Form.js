@@ -2,9 +2,26 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
+const path = require("path");
+const { randomUUID } = require("crypto");
 
 router.get("/", (req, res) => {
-  res.send("Hello from the form route!");
+  const dataPath = path.join(__dirname, "../data/userData.json");
+
+  fs.readFile(dataPath, "utf8", (err, data) => {
+    if (err) {
+      console.error("Error reading file:", err);
+      return res.status(500).json({ message: "Error reading file" });
+    }
+
+    try {
+      const jsonData = JSON.parse(data);
+      res.json(jsonData);
+    } catch (err) {
+      console.error("Error parsing JSON:", err);
+      res.status(500).json({ message: "Error parsing JSON" });
+    }
+  });
 });
 
 router.post("/submit", (req, res) => {
@@ -18,6 +35,11 @@ router.post("/submit", (req, res) => {
     email: formData.email,
     reserveType: formData.reserveType,
     submissionTime: new Date(),
+    initialSyn: Math.floor(Math.random() * 11),
+    selected: "not selected",
+    finalSyn: "N/A",
+    pollutionRate: 10,
+    condition: "Type D",
   };
 
   fs.readFile("./data/userData.json", (err, data) => {
