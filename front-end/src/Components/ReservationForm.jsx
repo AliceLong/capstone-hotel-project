@@ -81,10 +81,8 @@ const ReservationForm = (reserveType) => {
         // Save form data in local storage
         console.log(form);
         try {
-          const response = await axios.post(
-            "http://localhost:5002/form/submit",
-            form
-          );
+          const apiUrl = process.env.BACK_END_URL || "http://localhost:5002";
+          const response = await axios.post(`${apiUrl}/form/submit`, form);
           console.log(response.data); // Log the response data from the server
           if (form.reserveType === "Indoor Gourmet Service") {
             // If the response data from the server is successful
