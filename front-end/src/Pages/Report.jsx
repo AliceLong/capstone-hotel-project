@@ -41,7 +41,8 @@ const Report = () => {
       );
 
       try {
-        const response = await axios.get("http://localhost:5002/form");
+        const apiUrl = process.env.BACK_END_URL || "http://localhost:5002";
+        const response = await axios.get(`${apiUrl}/form/submit`);
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data: ", error);
