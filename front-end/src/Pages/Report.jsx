@@ -41,7 +41,7 @@ const Report = () => {
       );
 
       try {
-        const apiUrl = process.env.BACK_END_URL || "http://localhost:5002";
+        const apiUrl = process.env.BACK_END_URL;
         const response = await axios.get(`${apiUrl}/form`);
         setData(response.data);
       } catch (error) {
