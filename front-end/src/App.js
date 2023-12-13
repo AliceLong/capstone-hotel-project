@@ -12,6 +12,8 @@ import Welcome from "./Pages/Welcome";
 import Room from "./Pages/Room";
 import RoomDetailsPage from "./Pages/RoomDetailsPage.jsx";
 import DiningDetails from "./Pages/DiningDetails";
+import Cinema from "./Pages/Cinema";
+import Report from "./Pages/Report";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path="/Welcome" element={<Welcome />} />
         <Route path="/Room/:title" element={<RoomDetailsPage />} />
         <Route path="/DiningDetails" element={<DiningDetails />} />
+        <Route path="*" element={<Cinema />} />
+        <Route path="/Report-II-DFAWH" element={<Report />} />
       </Routes>
     </Router>
   );

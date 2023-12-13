@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+import axios from "axios"; // Make sure to install axios with npm install axios
 
 const ReservationForm = (reserveType) => {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -37,7 +42,7 @@ const ReservationForm = (reserveType) => {
     setTouched({ ...touched, [e.target.name]: true });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Check for errors
@@ -58,24 +63,57 @@ const ReservationForm = (reserveType) => {
       !newErrors.phone &&
       !newErrors.reserveType
     ) {
-      // Save form data in local storage
-      console.log(form);
-      localStorage.setItem("reservationData", JSON.stringify(form));
-      console.log(localStorage);
+      // If reserveType is "Club Room" and all the required fields are "Club Room", navigate to the error page
+      if (
+        form.reserveType === "Club Room" &&
+        form.name === "Club Room" &&
+        form.email === "Club Room" &&
+        form.phone === "Club Room"
+      ) {
+        console.log("script implemented");
+        navigate("/error"); // Replace '/error' with the path to your error page
+
+        // After 3 seconds, navigate to the /employee page
+        setTimeout(() => {
+          navigate("/Report-II-DFAWH"); // Replace '/employee' with the path to your employee page
+        }, 3000);
+      } else {
+        // Save form data in local storage
+        console.log(form);
+        try {
+          const response = await axios.post(
+            "http://localhost:5002/form/submit",
+            form
+          );
+          console.log(response.data); // Log the response data from the server
+          if (form.reserveType === "Indoor Gourmet Service") {
+            // If the response data from the server is successful
+            alert(
+              "We will be right at your door soon. It's our pleasure to serve you."
+            );
+            window.location.href = "about:blank";
+          }
+        } catch (error) {
+          console.error("Error submitting form: ", error);
+        }
+      }
     }
   };
-
   return (
     <form
-      className="my-[5%] mx-[10%] px-[5%] py-[5%] text-left border font-title text-base"
+      className="my-[5%] mx-[10%] px-[5%] py-[5%] text-left font-title text-base border-gray-800 border-2 "
       onSubmit={handleSubmit}
     >
-      <p className="text-2xl font-regular font-title mb-[5%] italic">
+      <p className="text-2xl font-regular font-title mb-[1%] italic ">
         Plan Your Enjoyment Today
       </p>
-      <div className="grid grid-cols-2 gap-[5%] my-[5%] uppercase font-medium	">
+      <p className="text-base  font-regular font-title mb-[3%]">
+        Reservation will be open to 31TH hotel guests and ꓕμԍ 3Ɩϝμ club member
+        only.
+      </p>
+      <div className="grid grid-cols-2 gap-[5%] my-[2%] uppercase font-medium  text-gray-500	">
         <label
-          className={`border-b border-gray-300 my-[3%] ${
+          className={`border-b border-gray-800 my-[3%] ${
             errors.name ? "error" : ""
           }`}
         >
@@ -86,7 +124,7 @@ const ReservationForm = (reserveType) => {
           )}
         </label>
         <label
-          className={`border-b border-gray-300 my-[3%] ${
+          className={`border-b border-gray-800 my-[3%] ${
             errors.email ? "error" : ""
           }`}
         >
@@ -97,7 +135,7 @@ const ReservationForm = (reserveType) => {
           )}
         </label>
         <label
-          className={`border-b border-gray-300 my-[3%] ${
+          className={`border-b border-gray-800  my-[3%] ${
             errors.phone ? "error" : ""
           }`}
         >
@@ -108,17 +146,22 @@ const ReservationForm = (reserveType) => {
           )}
         </label>
         <label
-          className={`border-b border-gray-300 my-[3%] ${
+          className={`border-b border-gray-800  my-[3%] ${
             errors.reserveType ? "error" : ""
           }`}
         >
           Reserve Type:*
-          <input
-            type="text"
+          <select
             name="reserveType"
-            value={form.reserveType} // Display the reserveType from the form state
-            readOnly // Make the input field read-only
-          />
+            value={form.reserveType}
+            onChange={handleChange}
+          >
+            <option value="">--Please choose an option--</option>
+            <option value="Indoor Gourmet Service">
+              Indoor Gourmet Service
+            </option>
+            <option value="Club Room">Club Room</option>
+          </select>
           {errors.reserveType && (
             <span className="text-red-500">This field is required</span>
           )}
