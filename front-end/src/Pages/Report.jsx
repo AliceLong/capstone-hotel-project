@@ -43,6 +43,7 @@ const Report = () => {
       try {
         const apiUrl = process.env.BACK_END_URL;
         const response = await axios.get(`${apiUrl}/form`);
+        console.log("response", response.data);
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data: ", error);
