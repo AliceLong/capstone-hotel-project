@@ -30,7 +30,8 @@ const DiningDetails = () => {
       alt: door_service_1,
       title: "Indoor Gourmet Service",
       description:
-        "A perfect place for family. The Home boasts three-and-a-half spacious baths, a full galley kitchen, dual fireplaces, and a generously proportioned open living and dining space, embodying a sense of tranquility and sophistication.",
+        "Indulge in the delightful awakening of flavors at Hotel 31th Bistro's Morning Buffet. Immerse yourself in the inviting ambiance and savor each bite in the heart of Manhattan's Hotel 31th.",
+
       operation_time:
         " Breakfast: 6:30am - 11:00 am | All Day Menu: 11:am – 11:00pm",
       reserve: true,

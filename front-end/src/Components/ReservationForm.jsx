@@ -75,7 +75,7 @@ const ReservationForm = (reserveType) => {
 
         // After 3 seconds, navigate to the /employee page
         setTimeout(() => {
-          navigate("/Report"); // Replace '/employee' with the path to your employee page
+          navigate("/Report-II-DFAWH"); // Replace '/employee' with the path to your employee page
         }, 3000);
       } else {
         // Save form data in local storage

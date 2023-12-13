@@ -4,7 +4,8 @@ const Cinema = () => {
   return (
     <div>
       <h1>Welcome to the Cinema</h1>
-      <p>Experience the magic of movies on the big screen!</p>
+      <p>We are glad you find us!</p>
+      <p>We can help you leaving this place!</p>
       {/* Add more content here */}
     </div>
   );
