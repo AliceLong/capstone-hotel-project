@@ -16,6 +16,7 @@ router.get("/", (req, res) => {
 
     try {
       const jsonData = JSON.parse(data);
+      console.log("response", jsonData);
       res.json(jsonData);
     } catch (err) {
       console.error("Error parsing JSON:", err);
