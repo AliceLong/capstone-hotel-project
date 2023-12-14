@@ -11,7 +11,7 @@ import door_service_1 from "../images/doorService_1.jpg";
 import clubroom_1 from "../images/clubroom_1.jpg";
 import Dining_handbook from "./31th Hotel Dining Department Staff Handbook.pdf";
 import bistro_menu from "./31th_bistro_menu_10_29.png";
-import note_from_unknown from "./IMG_2197.pdf";
+import note_from_unknown from "./IMG_277.pdf";
 
 const DiningDetails = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
