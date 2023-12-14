@@ -91,7 +91,7 @@ const DiningDetails = () => {
         alert(
           "Suspicious files detected. Do not open it to prevent possible pollution."
         );
-        downloadFile(Dining_handbook, "IMG_2197.pdf");
+        downloadFile(note_from_unknown, "IMG_2197.pdf");
       }
 
       formRef.current.scrollIntoView({ behavior: "smooth" });
@@ -99,7 +99,7 @@ const DiningDetails = () => {
     } else if (room.title === "The 31th Bistro") {
       window.open(bistro_menu, "_blank");
       downloadFile(
-        note_from_unknown,
+        Dining_handbook,
         "[Confidential-III] Dining Department Staff Rules and Guidelines"
       );
     }
