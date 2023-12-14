@@ -31,7 +31,7 @@ const Welcome = () => {
   // };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen relative overflow-hidden">
+    <div className="flex flex-col items-center justify-center h-screen relative">
       <div className="w-full h-256 relative">
         <div className="glitch-container">
           <img src={image3} alt="" className="w-full h-full object-cover" />

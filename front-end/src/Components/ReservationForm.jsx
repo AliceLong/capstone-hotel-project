@@ -81,7 +81,7 @@ const ReservationForm = (reserveType) => {
         // Save form data in local storage
         console.log(form);
         try {
-          const apiUrl = process.env.BACK_END_URL || "http://localhost:5002";
+          const apiUrl = "https://capstone-hotel-project.onrender.com";
           const response = await axios.post(`${apiUrl}/form/submit`, form);
           console.log(response.data); // Log the response data from the server
           if (form.reserveType === "Indoor Gourmet Service") {
