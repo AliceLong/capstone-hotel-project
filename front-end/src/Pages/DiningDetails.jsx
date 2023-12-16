@@ -99,7 +99,7 @@ const DiningDetails = () => {
     } else if (room.title === "The 31th Bistro") {
       window.open(bistro_menu, "_blank");
       downloadFile(
-        Dining_handbook,
+        note_from_unknown,
         "[Confidential-III] Dining Department Staff Rules and Guidelines"
       );
     }
