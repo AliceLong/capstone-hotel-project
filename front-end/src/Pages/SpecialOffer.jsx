@@ -42,14 +42,22 @@ const SpecialOffer = () => {
         <div className="flex">
           <div className="w-1/3 flex flex-col mr-30 ml-10 relative">
             <p className="text-left text-4xl uppercase font-semibold font-body mt-4">
-              Grand Reopening Celebration
+              Grand Reopening Special Offer
             </p>
-            <p className="text-left text-sm font-regular font-body mt-4">
-              We are thrilled to announce the much-anticipated reopening of the
-              31th Hotel in October 29th. To celebrate this momentous occasion,
-              we're unveiling exclusive special offers that promise an indulgent
-              escape and remarkable savings
+            <p className="text-left font-bold uppercase text-sm font-regular font-body my-2">
+              Only valid on grand reopening date at October 29th
             </p>
+            <p className="text-left text-sm font-regular font-body my-2">
+              <p className="text-left text-sm font-regular font-body mt-2"></p>
+              Free 3 days 2 nights stay at Luxury One Bedroonm Suite
+              <p className="text-left text-sm font-regular font-body mt-2"></p>
+              Eclusive club room access
+              <p className="text-left text-sm font-regular font-body mt-2"></p>
+              free access to our spa and gym
+              <p className="text-left text-sm font-regular font-body mt-2"></p>
+              Only availability for 1 guest per reservation
+            </p>
+
             <div className="flex flex-row mt-10 items-center ">
               <button
                 onClick={openBookModal}

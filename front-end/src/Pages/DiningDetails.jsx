@@ -10,7 +10,7 @@ import bistrol_2 from "../images/31th_Bistrol_2.jpg";
 import door_service_1 from "../images/doorService_1.jpg";
 import clubroom_1 from "../images/clubroom_1.jpg";
 import Dining_handbook from "./31th Hotel Dining Department Staff Handbook.pdf";
-import bistro_menu from "./31th_bistro_menu_10_29.png";
+import bistro_menu from "../images/31th_bistro_menu_10_29.png";
 import note_from_unknown from "./IMG_277.pdf";
 
 const DiningDetails = () => {
@@ -221,7 +221,9 @@ const DiningDetails = () => {
       <div ref={formRef}>
         <ReservationForm reserveType={reserveType} /> {/* Modify this line */}
       </div>
-      <button onClick={clearLocalStorage}>Clear Local Storage</button>
+      <button className="text-gray-50" onClick={clearLocalStorage}>
+        Clear Local Storage
+      </button>
       <Footer></Footer>
     </div>
   );

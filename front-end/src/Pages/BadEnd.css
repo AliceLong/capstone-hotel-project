@@ -1,0 +1,28 @@
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+
+.typing {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 0.15em solid black; /* The caret */
+  white-space: nowrap; /* Keep the content on a single line */
+  margin: 0 auto; /* Give that scrolling effect */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}

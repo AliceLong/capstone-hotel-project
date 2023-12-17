@@ -14,6 +14,7 @@ import RoomDetailsPage from "./Pages/RoomDetailsPage.jsx";
 import DiningDetails from "./Pages/DiningDetails";
 import Cinema from "./Pages/Cinema";
 import Report from "./Pages/Report";
+import BadEnd from "./Pages/BadEnd";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Error" element={<Error />} />
         <Route path="/SpecialOfferCode:<Code>" element={<MirrorError />} />
-        <Route path="SpecialOfferCode:<dfawh>" element={<SpecialOffer />} />
+        <Route path="SpecialOfferCode:<mirror>" element={<SpecialOffer />} />
         <Route path="/ꓕμԍ 3Ɩϝμ μoϝԍɼ" element={<Home2 />} />
         <Route path="/TermCondition/:flag?" element={<TermCondition />} />
         <Route path="/Loading" element={<Welcome />} />
@@ -32,6 +33,7 @@ function App() {
         <Route path="/DiningDetails" element={<DiningDetails />} />
         <Route path="*" element={<Cinema />} />
         <Route path="/Report-II-DFAWH" element={<Report />} />
+        <Route path="/BadEnd" element={<BadEnd />} />
       </Routes>
     </Router>
   );

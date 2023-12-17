@@ -28,7 +28,7 @@ const Dining = (home2) => {
             award-winning seafood cuisine at the club room.
           </p>
           <button
-            className="text-left text-xl uppercase font-semibold font-body mt-4 border-b-2 text-black hover:text-gray-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
+            className="text-left text-xl uppercase font-semibold font-body mt-[10%] border-gray-80   border-b-2 text-black hover:text-gray-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
             onMouseEnter={() => setSelectedOption("coffee")}
             onMouseDown={() => setText("Here")}
             onMouseUp={() => setText("")}
@@ -54,7 +54,7 @@ const Dining = (home2) => {
           {home2 ? (
             <Link
               to="/SpecialOfferCode:<Code>"
-              className="text-left text-xl uppercase font-semibold font-body mt-4 bg-transparent text-white hover:text-red-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
+              className="text-left text-xl uppercase font-semibold font-body mt-4 bg-transparent text-gray-100 hover:text-red-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
               onMouseEnter={() => setText("don't click this button")}
             >
               Special Offer
@@ -77,7 +77,7 @@ const Dining = (home2) => {
           />
           {text && (
             <div className="absolute top-0 ">
-              <p className="text-white text-xl">{text}</p>
+              <p className="text-white text-6xl opacity-60">{text}</p>
             </div>
           )}
         </div>

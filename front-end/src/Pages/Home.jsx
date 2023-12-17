@@ -80,10 +80,11 @@ function App() {
         >
           <div className="flex justify-center items-center text-center text-2xl font-title italic my-[10%] mx-[30%]">
             We are thrilled to announce the much-anticipated reopening of the
-            31th Hotel in this October, 29th and offer limited speical offer for
-            our loyal customers! After an extensive renovation, we invite you to
-            rediscover the epitome of luxury and hospitality in the heart of New
-            York City. Limited premium offer is now open to the publc.
+            31th Hotel in this October, 29th and offer limited free offer for
+            our loyal guests at Grand Opening Date! After an extensive
+            renovation, we invite you to rediscover the epitome of luxury and
+            hospitality in the heart of New York City. We look forward to
+            welcoming you back to the 31th Hotel
           </div>
         </div>
         <div

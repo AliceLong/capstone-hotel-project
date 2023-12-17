@@ -22,7 +22,12 @@ const BookingModal = ({ bookModalIsOpen, closeBookModal }) => {
       return;
     }
 
-    if (userCode !== promotionCode) {
+    if (!startDate || !endDate) {
+      setErrorMessage("Check-in date is required.");
+      return;
+    }
+
+    if (userCode.toLowerCase() !== promotionCode.toLowerCase()) {
       setErrorMessage("Invalid offer code.");
       return;
     }
@@ -94,7 +99,7 @@ const BookingModal = ({ bookModalIsOpen, closeBookModal }) => {
                 setErrorMessage("");
               } else if (start) {
                 setErrorMessage(
-                  "This check-in date is not available. Please find the avaiable check-in date"
+                  "The selected check-in date is not available. Currently, we only have availability for Grand Opening Date(special offer) "
                 );
               }
             }}
