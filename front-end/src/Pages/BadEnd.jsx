@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "./BadEnd.css"; // Make sure to import the stylesheet where you've defined the above CSS
 
-const TypingAnimation = () => {
+const BadEnd = () => {
   const [showText, setShowText] = useState(false);
   const [userData, setUserData] = useState(null);
   const [conditionType, setConditionType] = useState("Type E");
   const [displayConditionType, setDisplayConditionType] = useState("Type E");
+
+  const classifyUsername = (username) => {
+    if (username.length <= 2) {
+      return username;
+    }
+    return username[0] + "***" + username[username.length - 1];
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,7 +26,9 @@ const TypingAnimation = () => {
         const data = await response.json();
         // If data is an array and it has at least one item, select the last item
         if (Array.isArray(data) && data.length > 0) {
-          setUserData(data[data.length - 1]);
+          const lastItem = data[data.length - 1];
+          lastItem.name = classifyUsername(lastItem.name);
+          setUserData(lastItem);
         }
       } catch (error) {
         console.error(
@@ -87,7 +96,9 @@ const TypingAnimation = () => {
           <tbody>
             <tr>
               <td className="border px-4 py-2">{userData.userId}</td>
-              <td className="border px-4 py-2">{userData.name}</td>
+              <td className="border px-4 py-2">
+                {classifyUsername(userData.name)}
+              </td>
               <td className="border px-4 py-2 ">{displayConditionType}</td>
             </tr>
           </tbody>
@@ -97,4 +108,4 @@ const TypingAnimation = () => {
   );
 };
 
-export default TypingAnimation;
+export default BadEnd;

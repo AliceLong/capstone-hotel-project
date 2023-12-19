@@ -49,7 +49,7 @@ const SpecialOffer = () => {
             </p>
             <p className="text-left text-sm font-regular font-body my-2">
               <p className="text-left text-sm font-regular font-body mt-2"></p>
-              Free 3 days 2 nights stay at Luxury One Bedroonm Suite
+              Free 3 days stay at Luxury One Bedroonm Suite
               <p className="text-left text-sm font-regular font-body mt-2"></p>
               Eclusive club room access
               <p className="text-left text-sm font-regular font-body mt-2"></p>

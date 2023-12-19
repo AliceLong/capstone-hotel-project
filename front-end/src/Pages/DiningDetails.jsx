@@ -30,7 +30,7 @@ const DiningDetails = () => {
       alt: door_service_1,
       title: "Indoor Gourmet Service",
       description:
-        "Indulge in the delightful awakening of flavors at Hotel 31th Bistro's Morning Buffet. Immerse yourself in the inviting ambiance and savor each bite in the heart of Manhattan's Hotel 31th.",
+        "Indulge in the delightful awakening of flavors at Hotel 31th Bistro's Morning Buffet. Our responsible staff will .",
 
       operation_time:
         " Breakfast: 6:30am - 11:00 am | All Day Menu: 11:am – 11:00pm",
@@ -43,7 +43,7 @@ const DiningDetails = () => {
       title: "The 31th Bistro",
       description:
         "Indulge in the delightful awakening of flavors at Hotel 31th Bistro's Morning Buffet. Immerse yourself in the inviting ambiance and savor each bite in the heart of Manhattan's Hotel 31th.",
-      operation_time: "Breakfast: 7:00am - 10:00am",
+      operation_time: "Breakfast: 6:00am - 9:00am",
       reserve: false,
     },
     {
@@ -51,8 +51,7 @@ const DiningDetails = () => {
       src2: cafe_1,
       alt: "Cafe 31th",
       title: "Cafe 31th",
-      description:
-        "Double the enjoyment with our spacious Two Bedroom Suite, including a master bedroom, a separate living room, and an adjacent bedroom for the comfortable accommodation of four guests.",
+      description: "Our cafe offer various coffee and dessert",
       operation_time: "10:00am - 5:00pm",
       reserve: false,
     },
@@ -62,7 +61,7 @@ const DiningDetails = () => {
       alt: "The Club Room",
       title: "The Club Room",
       description:
-        "Enjoy a outdoor private terrance with fireplace. Interiror includes an master bedroom and a dining area. The suite is located on the top floor of the hotel, offering a panoramic view of the city.",
+        "Enjoy the exclusive Club Room Experience with chef menu,karooke and ",
       operation_time: "24 hours but only for ꓕμԍ 3Ɩϝμ club member",
       reserve: true,
     },
@@ -99,7 +98,7 @@ const DiningDetails = () => {
     } else if (room.title === "The 31th Bistro") {
       window.open(bistro_menu, "_blank");
       downloadFile(
-        note_from_unknown,
+        Dining_handbook,
         "[Confidential-III] Dining Department Staff Rules and Guidelines"
       );
     }
@@ -148,15 +147,6 @@ const DiningDetails = () => {
             Dining
           </p>
           <p className="text-white leading-6 text-sm font-title ">
-            {/* Elevating Manhattan's culinary scene, 31th Hotel distinguishes
-            itself with the well-known 31th Bistro and a exclusive private club
-            room. Our commitment to well-being shines through a carefully
-            curated array of health-conscious and organic culinary options.
-            Immerse yourself in a captivating gastronomic journey where each
-            dish is a vibrant expression of freshness, tailored with our guests'
-            overall well-being in focus. In prioritizing the safety of our
-            guests, please note that we have opted not to have a bar and do not
-            serve alcoholic beverages within the hotel premises. */}
             Immerse yourself in the pulsating rhythm of dining and nightlife at
             Hotel 31th. From savoring bites in the sophisticated ambiance of The
             31th Bistro to dancing the night away in the trendy beats of our

@@ -15,8 +15,23 @@ import DiningDetails from "./Pages/DiningDetails";
 import Cinema from "./Pages/Cinema";
 import Report from "./Pages/Report";
 import BadEnd from "./Pages/BadEnd";
+import axios from "axios";
+import AboutUs from "./Pages/AboutUs";
 
 function App() {
+  // perform a lightweight operation every 10 seconds in order to prevent server from idle on free plan of render.
+  const smallOperation = async () => {
+    // Let's self ping too.
+    const response = await axios.get(
+      "https://capstone-hotel-project.onrender.com/form"
+    );
+    console.log("response", response.data);
+  };
+
+  setInterval(() => {
+    smallOperation();
+  }, 10000);
+
   return (
     <Router>
       <Routes>
@@ -33,7 +48,8 @@ function App() {
         <Route path="/DiningDetails" element={<DiningDetails />} />
         <Route path="*" element={<Cinema />} />
         <Route path="/Report-II-DFAWH" element={<Report />} />
-        <Route path="/BadEnd" element={<BadEnd />} />
+        <Route path="/ƧꓕⱯꓕꓵƧ_CHⱯИᘓE" element={<BadEnd />} />
+        <Route path="/AboutUsLimited" element={<AboutUs />} />
       </Routes>
     </Router>
   );
