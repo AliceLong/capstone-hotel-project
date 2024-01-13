@@ -23,7 +23,9 @@ const policiesData = [
   {
     title: "Dining",
     content:
-      "Our second floor offer dining services in Café, The 31th Bistro, and The Club Room. Please note that there is no bar.",
+      "Our second floor offer dining services in Café, The 31th Bistro, and The Club Room that only open to members. Please note that our bar has been closed.",
+    hiddenContent:
+      "We have the biggest bar in the city, please come and enjoy our drinks.",
   },
   {
     title: "Employee Identification",

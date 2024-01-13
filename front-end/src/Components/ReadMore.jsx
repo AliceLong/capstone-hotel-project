@@ -11,7 +11,7 @@ const ReadMore = () => {
   return (
     <div className="container mx-auto p-6 max-w-screen-md bg-white shadow-lg rounded-lg">
       <h1 className="text-2xl font-bold mb-4 text-gray-800">
-        Terms and Conditions
+        Terms and Condition
       </h1>
       <p className="mb-4 text-gray-700">
         Welcome to our special hotel offer. To book with us, kindly ensure that

@@ -62,18 +62,18 @@ const Welcome = () => {
             className="reminder"
             style={{ top: reminder.top, left: reminder.left }}
           >
-            <p className="text-black text-center text-base font-regular font-body  mx-[5vw] mb-[2vh]">
-              Please read our policies carefully before confirming booking
+            <p className="text-black text-center text-base font-regular font-body  mx-[2vw] mb-[2vh]">
+              Please read the policies carefully before confirming booking
             </p>
-            <div className="text-red-500 text-left text-sm underline mx-[5vw] mb-[2vh]">
+            <div className="text-red-500 text-left text-sm  mx-[5vw] mb-[2vh]">
               <p>
-                If you haven't consumed any food provided by hotel, leave now.
-                Else, you are the Hotel GUEST. You need to stay in the hotel for
-                at least three days.
+                If you haven't consumed any food provided by hotel, LEAVE NOW.
+                or else you are the Hotel GUEST. You need to stay in the hotel
+                for at least three days.
               </p>
-              <p>
-                Do not expose any of our personal information. Do not become
-                part of them
+              <p className="mt-5">
+                Do not expose any of personal information to this website, or
+                else IT WILL TARGET YOU
               </p>
             </div>
             <div className="flex col-2 justify-center gap-2 gap-x-20 mx-[5vw] mb-[2vh]">

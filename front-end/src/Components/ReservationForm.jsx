@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import BadEnd from "../Pages/BadEnd";
 import axios from "axios"; // Make sure to install axios with npm install axios
 
 const ReservationForm = (reserveType) => {
@@ -63,37 +63,37 @@ const ReservationForm = (reserveType) => {
       !newErrors.phone &&
       !newErrors.reserveType
     ) {
-      // If reserveType is "Club Room" and all the required fields are "Club Room", navigate to the error page
-      if (
-        form.reserveType === "Club Room" &&
-        form.name === "Club Room" &&
-        form.email === "Club Room" &&
-        form.phone === "Club Room"
-      ) {
-        console.log("script implemented");
-        navigate("/error"); // Replace '/error' with the path to your error page
-
-        // After 3 seconds, navigate to the /employee page
-        setTimeout(() => {
-          navigate("/Report-II-DFAWH"); // Replace '/employee' with the path to your employee page
-        }, 3000);
-      } else {
-        // Save form data in local storage
-        console.log(form);
-        try {
-          const apiUrl = "https://capstone-hotel-project.onrender.com";
-          const response = await axios.post(`${apiUrl}/form/submit`, form);
-          console.log(response.data); // Log the response data from the server
-          if (form.reserveType === "Indoor Gourmet Service") {
-            // If the response data from the server is successful
-            alert(
-              "We will be right at your door soon. It's our pleasure to serve you."
-            );
-            window.location.href = "about:blank";
-          }
-        } catch (error) {
-          console.error("Error submitting form: ", error);
+      // Save form data in local storage
+      console.log(form);
+      try {
+        // If reserveType is "Club Room" and all the required fields are "Club Room", navigate to the error page
+        if (
+          form.reserveType === "Club Room" &&
+          form.name === "Club Room" &&
+          form.email === "Club Room" &&
+          form.phone === "Club Room"
+        ) {
+          console.log("script implemented");
+          navigate("/error"); // Replace '/error' with the path to your error page
+          // After 3 seconds, navigate to the /employee page
+          setTimeout(() => {
+            navigate("/Report-II-DFAWH"); // Replace '/employee' with the path to your employee page
+          }, 3000);
+          return;
         }
+
+        const apiUrl = "https://capstone-hotel-project.onrender.com";
+        const response = await axios.post(`${apiUrl}/form/submit`, form);
+        console.log(response.data); // Log the response data from the server
+        if (form.reserveType === "Indoor Gourmet Service") {
+          // If the response data from the server is successful
+          alert(
+            "We will be right at your door soon. It's our pleasure to serve you."
+          );
+          navigate("/ƧꓕⱯꓕꓵƧ_CHⱯИᘓE");
+        }
+      } catch (error) {
+        console.error("Error submitting form: ", error);
       }
     }
   };

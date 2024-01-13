@@ -30,7 +30,7 @@ const Dining = (home2) => {
           <button
             className="text-left text-xl uppercase font-semibold font-body mt-[10%] border-gray-80   border-b-2 text-black hover:text-gray-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
             onMouseEnter={() => setSelectedOption("coffee")}
-            onMouseDown={() => setText("Here")}
+            onMouseDown={() => setText("The Club Room ")}
             onMouseUp={() => setText("")}
           >
             Cafe 31th
@@ -38,7 +38,7 @@ const Dining = (home2) => {
           <button
             className="text-left text-xl uppercase font-semibold font-body mt-4 border-b-2 text-black hover:text-gray-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
             onMouseEnter={() => setSelectedOption("highDining")}
-            onMouseDown={() => setText("is")}
+            onMouseDown={() => setText("and the bar")}
             onMouseUp={() => setText("")}
           >
             The Club Room
@@ -46,28 +46,18 @@ const Dining = (home2) => {
           <button
             className="text-left text-xl uppercase font-semibold font-body mt-4 border-b-2 text-black hover:text-gray-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
             onMouseEnter={() => setSelectedOption("buffet")}
-            onMouseDown={() => setText("not safe")}
+            onMouseDown={() => setText("are both dangerous")}
             onMouseUp={() => setText("")}
           >
             The 31th Bistro
           </button>
-          {home2 ? (
-            <Link
-              to="/SpecialOfferCode:<Code>"
-              className="text-left text-xl uppercase font-semibold font-body mt-4 bg-transparent text-gray-100 hover:text-red-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
-              onMouseEnter={() => setText("don't click this button")}
-            >
-              Special Offer
-            </Link>
-          ) : (
-            <Link
-              to="/DiningDetails"
-              className="text-left text-xl uppercase font-semibold font-body mt-4 bg-transparent border-b-2 text-blac hover:text-red-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
-              onMouseEnter={() => setText("don't click this button")}
-            >
-              The most iconic night bar
-            </Link>
-          )}
+
+          <Link
+            to="/DiningDetails"
+            className="text-left text-xl uppercase font-semibold font-body mt-4 bg-transparent border-b-2 text-blac hover:text-red-500 transform transition duration-500 ease-in-out hover:-translate-y-1"
+          >
+            The most iconic night bar
+          </Link>
         </div>
         <div className="w-1/2 h-1/2 pl-[10%] relative">
           <img
@@ -77,7 +67,7 @@ const Dining = (home2) => {
           />
           {text && (
             <div className="absolute top-0 ">
-              <p className="text-white text-6xl opacity-60">{text}</p>
+              <p className="text-white text-4xl">{text}</p>
             </div>
           )}
         </div>

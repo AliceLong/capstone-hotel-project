@@ -126,7 +126,7 @@ const Room = () => {
           >
             Room and Suite
           </p>
-          <p className="text-white leading-6 text-base font-title ">
+          <p className="text-white leading-6 text-sm font-title ">
             Embark on an immersive nature-centered experience at Hotel 31th,
             NYC, where our suites redefine luxury living with a harmonious
             fusion of modern elegance and natural elements. Envelop yourself in
@@ -186,7 +186,9 @@ const Room = () => {
               </div>
             );
           })}
-          <button onClick={clearLocalStorage}>Clear Local Storage</button>
+          <button className="text-gray-50" onClick={clearLocalStorage}>
+            Clear Local Storage
+          </button>
         </div>
       </div>
       <Footer></Footer>

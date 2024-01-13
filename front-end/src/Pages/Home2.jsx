@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import Accomendation from "../Components/Accomendation.jsx";
-import Dining from "../Components/Dining.jsx";
+import Dining2 from "../Components/Dining2.jsx";
 import image1 from "../images/AdobeStock_323023398.jpeg";
 import image3 from "../images/AdobeStock_629069571.jpeg";
 import room1 from "../images/room1.png";
@@ -155,7 +155,7 @@ function Home2() {
             opacity: inViewDining ? 1 : 0,
           }}
         >
-          <Dining home2={home2} />
+          <Dining2 home2={home2} />
         </div>
 
         <div

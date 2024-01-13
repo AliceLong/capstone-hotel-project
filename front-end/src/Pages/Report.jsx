@@ -34,18 +34,28 @@ const Report = () => {
 
     // Add more terms as needed
   ];
+
+  const classifyUsername = (username) => {
+    if (username.length <= 2) {
+      return username[0] + "***";
+    }
+    return username[0] + "***" + username[username.length - 1];
+  };
+
   useEffect(() => {
     const fetchData = async () => {
-      alert(
-        "Security Alert: A breach has been detected involving classified information. Unauthorized dissemination may have occurred with external organizations or experimental subjects. Immediate containment protocols are in effect.This message is from the 31TH Hotel Management Authority."
-      );
+      // ...
 
       try {
         const response = await axios.get(
           "https://capstone-hotel-project.onrender.com/form"
         );
         console.log("response", response.data);
-        setData(response.data);
+        const classifiedData = response.data.map((item) => ({
+          ...item,
+          name: classifyUsername(item.name),
+        }));
+        setData(classifiedData);
       } catch (error) {
         console.error("Error fetching data: ", error);
       }

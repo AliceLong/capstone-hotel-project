@@ -7,10 +7,10 @@ const Accommodations = ({ bigImage, smallImage, home2 }) => {
     "Hotel rooms offer a range of views, from vibrant cityscapes with twinkling lights, to serene natural landscapes like gardens or oceans. Some overlook historic landmarks, providing a glimpse into the past, ensuring a personalized stay for every guest.";
   const texts = [
     "",
-    "We are here to help",
-    "The special offer",
-    "is under the 31th Bistro",
-    "Use the mirror",
+    "Can't find where speical offer is?",
+    "We are hear to help",
+    "It's under 31th Bistro",
+    "Don't forget to use the mirror",
   ];
   const [textIndex, setTextIndex] = useState(0);
 
